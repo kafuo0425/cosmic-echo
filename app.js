@@ -28,14 +28,16 @@ app.use((req, res, next) => {
   next();
 });
 
+// 日志记录中间件
 app.use((req, res, next) => { 
   logger.info(`${req.method} ${req.url}`);
   next();
 });
 
+// MongoDB 连接设置
 const dbURI = process.env.MONGODB_URI;
 const connectWithRetry = () => {
-  mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+  mongoose.connect(dbURI)  // 移除废弃选项
     .then(() => logger.info('MongoDB 已连接'))
     .catch((err) => {
       logger.error('MongoDB 连接错误:', err);
@@ -45,6 +47,7 @@ const connectWithRetry = () => {
 
 connectWithRetry();
 
+// 路由设置
 app.use('/api/users', userRoutes);
 app.use('/api/chatbot', chatbotRoutes);
 app.use('/webhook/facebook', facebookWebhookRoutes);
@@ -59,6 +62,7 @@ app.use((err, req, res, next) => {
   res.status(statusCode).send({ error: message });
 });
 
+// 启动服务器
 const PORT = process.env.PORT || 9587;
 app.listen(PORT, () => {
   logger.info(`主服务器已启动，端口：${PORT}`);

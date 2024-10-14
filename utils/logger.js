@@ -1,5 +1,3 @@
-// utils/logger.js
-
 const winston = require('winston');
 const path = require('path');
 
@@ -22,19 +20,6 @@ const logger = winston.createLogger({
   ]
 });
 
-// 日志错误信息
-logger.error = (message) => {
-  logger.log({ level: 'error', message });
-};
-
-// 日志信息
-logger.info = (message) => {
-  logger.log({ level: 'info', message });
-};
-
-// 日志警告信息
-logger.warn = (message) => {
-  logger.log({ level: 'warn', message });
-};
+// 不需要手动重写 logger.error, logger.info 和 logger.warn 方法，直接使用 winston 提供的默认方法
 
 module.exports = logger;

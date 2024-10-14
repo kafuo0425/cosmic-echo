@@ -1,12 +1,9 @@
-// controllers/userController.js
-
 const express = require("express");
 const router = express.Router();
-const userService = require("../services/userService");
 const { body, validationResult } = require('express-validator');
 const logger = require("../utils/logger");
 
-// 用户注册
+// 用户注册 (暂时移除 userService 逻辑)
 router.post(
   '/register',
   [
@@ -24,8 +21,8 @@ router.post(
     }
 
     try {
-      const user = await userService.registerUser(req.body);
-      res.status(201).json({ message: 'User registered successfully', user });
+      // 这里删除了 userService 相关逻辑
+      res.status(201).json({ message: 'User registered successfully (feature disabled)' });
     } catch (error) {
       logger.error('User registration error:', error);
       res.status(400).json({ error: error.message });
@@ -33,7 +30,7 @@ router.post(
   }
 );
 
-// 用户登录
+// 用户登录 (暂时移除 userService 逻辑)
 router.post(
   '/login',
   [
@@ -48,8 +45,8 @@ router.post(
     }
 
     try {
-      const token = await userService.loginUser(req.body);
-      res.status(200).json({ message: 'Login successful', token });
+      // 这里删除了 userService 相关逻辑
+      res.status(200).json({ message: 'Login successful (feature disabled)' });
     } catch (error) {
       logger.error('User login error:', error);
       res.status(400).json({ error: error.message });
