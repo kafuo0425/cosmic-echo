@@ -1,0 +1,12 @@
+{
+  "db": {
+    "uri": "${MONGODB_URI}?retryWrites=true&w=majority"
+  },
+  "logger": {
+    "level": "error",
+    "file": "${LOG_FILE_PATH:-logs/app.log}"
+  },
+  "jwt": {
+    "secret": "${JWT_SECRET}"
+  }
+}

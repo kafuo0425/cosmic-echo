@@ -1,0 +1,70 @@
+{
+  "general_inquiry": {
+    "subject": "General Inquiry and Appointment",
+    "message": "Hello {{customerName}},\n\nThank you for contacting **High-Dimensional Space**. I am Cosmic Echo, and I’m delighted to assist you.\n\nRegarding your interest in {{serviceName}}, this service is designed to help you and your pet/self establish a deeper emotional connection. You can book an appointment using the following link: [appointment link]. If you have any questions or need more information, please feel free to let me know.\n\nLooking forward to embarking on a journey of spiritual growth with you.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "emotional_support": {
+    "subject": "Emotional Support",
+    "message": "Hello {{customerName}},\n\nThank you for trusting us with your feelings. At **High-Dimensional Space**, we understand the complexity and depth of emotions. We deeply sympathize with you regarding {{situation}}.\n\nWe are here to offer {{healingService}} to help you through this challenging time. You can book an appointment using the following link: [appointment link], or simply reply to this message, and we will arrange the necessary support for you.\n\nRemember, you are not alone; we are here to accompany you.\n\nWarm regards,\nHigh-Dimensional Space"
+  },
+  "course_registration": {
+    "subject": "Course Registration and Inquiry",
+    "message": "Hello {{customerName}},\n\nThank you for your interest in the **High-Dimensional Space** course! Our {{courseName}} is specifically designed for {{targetAudience}} to help you gain deeper insights into {{courseObjective}}.\n\nThe course will be held on {{date}} online, at {{time}}. Please click the link below for more details and to register: [registration link].\n\nIf you have any questions, feel free to reach out anytime. I look forward to exploring the mysteries of the mind with you in this course.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "pricing_inquiry": {
+    "subject": "Pricing or Service Inquiry",
+    "message": "Hello {{customerName}},\n\nThank you for your inquiry. Here are the pricing details for {{serviceName}}:\n\n**Malaysia**\n- 30-minute session: RM 188.00\n- 60-minute session: RM 258.00\n- 90-minute session: RM 328.00\n\n**Taiwan**\n- 30-minute session: NTD 1,500.00\n- 60-minute session: NTD 2,000.00\n- 90-minute session: NTD 2,500.00\n\n**International**\n- 30-minute session: USD 55.00\n- 60-minute session: USD 75.00\n- 90-minute session: USD 95.00\n\nYou can book an appointment using the following link: [appointment link]. If you need further details, please don't hesitate to contact us.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "customer_indecision": {
+    "subject": "Customer Hesitation or Not Ready Yet",
+    "message": "Hello {{customerName}},\n\nThank you for considering our services. We understand that making a decision takes time. **High-Dimensional Space** is always here, ready to support you whenever you're ready.\n\nIf you have any questions or need more information, feel free to reach out to us. We hope you find the answers and direction you're looking for.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "transfer_to_human": {
+    "subject": "Request for Human Support",
+    "message": "Hello {{customerName}},\n\nThank you for your patience. I have forwarded your request to our human support team, and they will reach out to you as soon as possible.\n\nThank you for your understanding, and I hope you receive the help you need.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "end_conversation": {
+    "subject": "Closing Conversation",
+    "message": "Hello {{customerName}},\n\nThank you for reaching out to us. If you've completed your booking, we sincerely appreciate your trust and look forward to meeting you. If you're still considering, we are always here to provide additional information if needed.\n\nWishing you strength and peace on your spiritual journey.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "technical_issue": {
+    "subject": "Technical Issue or Appointment System Error",
+    "message": "Hello {{customerName}},\n\nWe apologize for the issue you are experiencing with our appointment system. Please try the following steps to resolve the issue:\n1. Ensure your internet connection is stable.\n2. Clear your browser cache and try again.\n3. Try using a different browser or device.\n\nIf the issue persists, please reply to this message or contact us via WhatsApp, and our human support team will assist you promptly.\n\nThank you for your patience and understanding.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "refund_request": {
+    "subject": "Refund Request",
+    "message": "Hello {{customerName}},\n\nThank you for reaching out to us. According to our service policy, once the payment is confirmed, we are unable to offer a refund. However, you can adjust or modify your appointment anytime with at least 1-hour notice before the session.\n\nIf you have any additional questions or need further assistance, please don't hesitate to let us know.\n\nThank you for your understanding and cooperation.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "partnership_request": {
+    "subject": "Partnership or Collaboration Request",
+    "message": "Hello {{customerName}},\n\nThank you for your interest in collaborating with **High-Dimensional Space**! We are thrilled about your proposal.\n\nPlease provide more details about your partnership suggestion, so we can better understand your needs and expectations. You can reply to this message or contact us via email at {{emailAddress}}.\n\nWe look forward to the opportunity to collaborate and create more profound spiritual and emotional experiences together.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "positive_feedback": {
+    "subject": "Positive Feedback and Appreciation",
+    "message": "Hello {{customerName}},\n\nThank you so much for your recognition and support for **High-Dimensional Space**! Your feedback is very important to us and inspires us to continuously improve our services, helping more people and pets find inner peace and strength.\n\nIf you have any further suggestions or need more support, feel free to reach out anytime. We look forward to assisting you in the future.\n\nWishing you and your pet happiness and good health.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "negative_feedback": {
+    "subject": "Negative Feedback or Complaint",
+    "message": "Hello {{customerName}},\n\nWe are sorry to hear that your experience at **High-Dimensional Space** did not meet your expectations. We sincerely apologize for any inconvenience and distress caused.\n\nPlease provide more details about the issue or dissatisfaction you encountered, so we can better understand and make necessary improvements. You can reply to this message or contact us via email at {{emailAddress}}.\n\nThank you for your feedback. We will do our best to resolve the issue and improve our service quality.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "faq": {
+    "subject": "Frequently Asked Questions (FAQ)",
+    "message": "Hello {{customerName}},\n\nThank you for your interest in **High-Dimensional Space**. Below are some answers to frequently asked questions that might be helpful:\n\n**1. How do I book a service?**\nYou can book a service through the following link: [appointment link], or contact us directly through our Facebook page and WhatsApp.\n\n**2. What payment methods do you accept?**\nWe accept PUBLIC BANK for Malaysia, 台北富邦銀行 for Taiwan, and PayPal for international clients.\n\n**3. How far in advance do I need to notify for cancellations or changes?**\nPlease notify us at least 1 hour before the session for any changes.\n\n**4. Are the courses held online or in person?**\nOur courses are primarily held online via Zoom, so you can join from the comfort of your home.\n\nIf you have any further questions, feel free to contact us. We would be happy to assist you.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "special_request": {
+    "subject": "Special Request or Custom Needs",
+    "message": "Hello {{customerName}},\n\nThank you for reaching out to **High-Dimensional Space**. We are more than happy to offer customized services to meet your special needs.\n\nPlease provide more details about your specific requirements or goals, so we can tailor the most suitable healing plan for you. You can reply to this message or contact us via email at {{emailAddress}}.\n\nWe look forward to offering personalized support and guidance to you.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "holiday_greetings": {
+    "subject": "Holiday Greetings and Special Event Notice",
+    "message": "Hello {{customerName}},\n\nHappy {{holidayName}}! During this special time, **High-Dimensional Space** would like to extend our gratitude for your continued support and trust.\n\nAs a token of appreciation, we are excited to offer {{eventDetails}}. You can learn more and participate by clicking the following link: [event link].\n\nIf you have any questions or need assistance, feel free to contact us at any time. We wish you peace and happiness in the coming year.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "post_service_followup": {
+    "subject": "Post-Service or Course Follow-Up",
+    "message": "Hello {{customerName}},\n\nI hope you have found value in the {{courseOrServiceName}} at **High-Dimensional Space**. We deeply care about your learning and growth process and would love to hear about your experience.\n\nIf you have any feedback or need further support, please do not hesitate to contact us. We are committed to continuously improving our services to better serve you.\n\nThank you for choosing us, and may you continue to find strength and harmony in the days ahead.\n\nBest regards,\nHigh-Dimensional Space"
+  },
+  "unrecognized_request": {
+    "subject": "Unrecognized or Unprocessable Request",
+    "message": "Hello {{customerName}},\n\nWe apologize for not being able to understand your request. To help us assist you better, you may try the following:\n\n1. Simplify your question or request\n2. Provide more detailed information about the help you need\n\nIf the issue persists, please contact our human support team via: [contact info].\n\nThank you for your understanding and cooperation.\n\nBest regards,\nHigh-Dimensional Space"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "db": {
+    "uri": "mongodb://localhost:27017/cosmic-echo-dev"
+  },
+  "logger": {
+    "level": "debug",
+    "file": false
+  }
+}
