@@ -1,0 +1,20 @@
+[
+  {
+    "id": "001",
+    "name": "宠物情感与行为分析课程",
+    "description": "深入学习宠物情感与行为分析技巧。",
+    "price": "RM 2580",
+    "date": "2024年9月13日-15日",
+    "time": "上午10:00 - 下午6:00",
+    "link": "https://example.com/register"
+  },
+  {
+    "id": "002",
+    "name": "灵性成长课程",
+    "description": "通过灵性探索，激发内在觉醒，提升自我能量场的共振。",
+    "price": "RM 3380",
+    "date": "2024年10月1日-3日",
+    "time": "上午9:00 - 下午5:00",
+    "link": "https://example.com/register"
+  }
+]

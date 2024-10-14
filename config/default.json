@@ -23,5 +23,12 @@
     "phoneNumberId": "${WHATSAPP_PHONE_NUMBER_ID:-default_phone_number_id}",
     "accountId": "${WHATSAPP_ACCOUNT_ID:-default_account_id}",
     "certificate": "${WHATSAPP_CERTIFICATE:-default_whatsapp_certificate}"
+  },
+  "course": {
+    "defaultDuration": 60,
+    "defaultLanguage": "zh",
+    "maxAttendees": 20,
+    "location": "online",
+    "notificationTime": 24
   }
 }

@@ -1,92 +1,92 @@
-✨ 宇宙回声 Cosmic Echo - 项目结构说明 ✨
+# 🌌 宇宙回声 Cosmic Echo - 项目结构说明
 
-📌 **深入了解项目目录结构，帮助开发者快速上手并扩展 Cosmic Echo 聊天机器人。**
+📌 **快速了解项目结构，帮助开发者快速扩展 Cosmic Echo AI小助手。**
 
-📁 **目录概览**
-宇宙回声 Cosmic Echo 项目采用模块化设计，以下是项目的主要文件夹及其职责的简要说明，帮助开发者快速理解项目架构：
+---
 
-```
+## 目录概览
+
+```plaintext
 cosmic-echo/
-├── config/                # 项目配置文件
-├── controllers/           # 处理业务逻辑和请求的控制器
-├── locales/               # 多语言支持的翻译文件
-├── models/                # 数据模型（与 MongoDB 集成）
-├── routes/                # 定义各 API 端点的路由
-├── services/              # 业务逻辑处理
-├── utils/                 # 工具函数和日志
-├── app.js                 # 应用的主入口文件
-└── package.json           # 项目的依赖和脚本管理文件
+├── config/                # 环境配置文件
+├── controllers/           # 处理业务逻辑的控制器
+├── locales/               # 多语言翻译文件
+├── models/                # MongoDB 数据模型
+├── routes/                # API 路由定义
+├── services/              # 业务逻辑处理层
+├── utils/                 # 工具函数与日志
+├── app.js                 # 应用主入口
+└── package.json           # 项目依赖与脚本管理
 ```
 
-📜 **详细目录说明**
+---
 
-### 1. 🌐 config/ - 配置文件夹
-存储项目的环境配置，确保应用在不同环境（开发、测试、生产）中顺利运行。只需修改配置文件即可适应不同环境，无需更改代码。
+## 目录说明
 
-**主要文件：**
-- `default.json`：默认配置。
-- `development.json`：开发环境配置。
-- `production.json`：生产环境配置。
+### 📂 config/
+存放项目的环境配置文件，根据不同的环境（如开发、生产环境）来加载相应的配置。
 
-### 2. 🛠️ controllers/ - 控制器
-处理 HTTP 请求，操作数据并调用服务层逻辑。每个控制器对应特定功能模块，如聊天、用户管理等。
+### 📂 controllers/
+处理用户请求并与业务逻辑层交互。主要控制器包括：
+- **chatbotController.js**：处理聊天请求并生成回复。
+- **facebookController.js**：管理 Facebook Webhook 请求。
+- **userController.js**：处理用户的登录、注册等操作。
 
-**主要文件：**
-- `chatbotController.js`：处理聊天请求。
-- `facebookController.js`：处理 Facebook Webhook 事件。
-- `userController.js`：管理用户相关操作。
+### 📂 locales/
+存储多语言翻译文件，支持中文、英文、马来语等多种语言。每个语言文件包含项目中所有文本的翻译。
 
-### 3. 🌍 locales/ - 多语言支持
-通过 i18next 实现国际化，每种语言有对应的 JSON 文件，存储翻译文本。
+### 📂 models/
+定义 MongoDB 数据模型，确保数据的结构一致性。例如：
+- **userModel.js**：定义用户数据结构。
+- **userPreferencesModel.js**：保存用户的偏好设置。
 
-**主要文件：**
-- `en.json`：英文翻译。
-- `zh.json`：中文翻译。
+### 📂 routes/
+将请求路由到相应的控制器，管理应用的 API 端点。主要文件：
+- **api.js**：整合所有 API 路由。
+- **facebookWebhook.js**：处理 Facebook Webhook 请求。
+- **whatsappWebhook.js**：处理 WhatsApp Webhook 请求。
 
-### 4. 🗂️ models/ - 数据模型
-与 MongoDB 数据库交互，定义数据结构和验证规则。
+### 📂 services/
+封装核心业务逻辑，便于与控制器交互。例如：
+- **emotionService.js**：分析用户情感，调整回复语气。
+- **intentService.js**：识别用户需求并生成相应的回复。
+- **messageService.js**：管理消息的生成和发送逻辑。
 
-**主要文件：**
-- `userModel.js`：定义用户数据结构。
-- `userPreferencesModel.js`：存储用户个性化设置。
+### 📂 utils/
+存放工具类函数和日志管理模块，便于代码复用和系统监控。
+- **helper.js**：通用辅助函数。
+- **logger.js**：日志记录与管理。
 
-### 5. 🌐 routes/ - 路由
-定义所有 API 端点，将请求分发给相应控制器。
+---
 
-**主要文件：**
-- `api.js`：定义所有 API 的主路由。
-- `facebookWebhook.js`：处理 Facebook Webhook 请求。
+## 主文件
 
-### 6. 🔧 services/ - 服务层
-包含主要业务逻辑，处理复杂数据操作及与外部 API 的交互。将业务逻辑与控制器分离，便于维护和扩展。
+### 📄 app.js
+项目的主入口，负责启动 Express 服务器、连接 MongoDB 数据库并注册所有路由。
 
-**主要文件：**
-- `emotionService.js`：用户情感分析。
-- `intentService.js`：识别用户需求。
-- `messageService.js`：管理聊天消息的生成和回复。
+```javascript
+const express = require('express');
+const mongoose = require('mongoose');
+const app = express();
 
-### 7. 🛠️ utils/ - 工具类
-包含工具和辅助函数，提高代码复用性。
+// 连接数据库
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
-**主要文件：**
-- `helper.js`：常用辅助函数。
-- `logger.js`：记录日志，方便调试和监控。
+// 中间件与路由
+app.use(express.json());
+app.use('/api', require('./routes/api'));
 
-### 8. 🚀 app.js - 应用入口
-项目的核心文件，初始化 Express 应用程序，加载中间件、路由和数据库配置，启动服务器。
+// 启动服务器
+app.listen(process.env.PORT, () => {
+  console.log(`Server running on port ${process.env.PORT}`);
+});
+```
 
-🛡️ **功能概述：**
-- 加载中间件（如 helmet、body-parser、cors）。
-- 连接 MongoDB 数据库。
-- 注册路由，启动服务器。
+### 📄 package.json
+管理项目的依赖、版本信息与常用脚本命令。可以使用 npm 轻松安装所需依赖。
 
-### 9. 📦 package.json - 依赖和脚本管理
-定义项目依赖、脚本及 Node.js 版本要求，帮助项目自动安装所需库。
+---
 
-**主要字段：**
-- `dependencies`：核心依赖，如 express、mongoose。
-- `devDependencies`：开发时的依赖，如 nodemon、jest。
-- `scripts`：常用的 NPM 脚本命令，如启动项目（`npm start`）。
+## 🌟 总结
 
-🌟 **总结**
-希望这份项目结构说明帮助开发者快速了解 Cosmic Echo 的架构，提升开发效率。如有任何问题，欢迎联系项目维护者！
+希望这个项目结构说明可以帮助你快速理解 Cosmic Echo，并协助有关的开发以及扩展的工作！如果有任何问题，欢迎随时咨询。

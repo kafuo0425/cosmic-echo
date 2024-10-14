@@ -3,57 +3,32 @@
 const express = require("express");
 const router = express.Router();
 const personalizationService = require('../services/personalizationService');
+const languageService = require('../services/languageService');
 const logger = require("../utils/logger");
+const welcomeMessages = require('../locales/welcomeMessages'); // 动态消息模板
 
-// 处理 Webhook 请求
 router.post('/webhook', async (req, res) => {
   const body = req.body;
 
   try {
-    // 检查 Webhook 对象类型是否为 Facebook Messenger
+    const lang = req.headers['accept-language'] || 'zh'; // 优先中文
+    languageService.setLanguage(lang);
+
+    const customerName = body.customerName || '客户';
+    const message = welcomeMessages.default_welcome.message.replace('{{customerName}}', customerName);
+
     if (body.object === 'page') {
-      // 处理每一个 entry 对象
-      const entryPromises = body.entry.map(async (entry) => {
-        const webhookEvent = entry.messaging && entry.messaging[0];
-
-        if (!webhookEvent) {
-          logger.warn('Invalid Facebook Messenger event structure', entry);
-          return null;
-        }
-
-        logger.info('Facebook Messenger event:', webhookEvent);
-
-        // 获取用户偏好或使用默认空数组
-        const preferences = req.body.preferences || [];
-
-        // 生成个性化回复
-        const responseMessage = await personalizationService.generatePersonalizedResponse(
-          webhookEvent.message && webhookEvent.message.text, 
-          preferences
-        );
-
-        return responseMessage;  // 返回处理后的响应消息
+      logger.info('Facebook Messenger event received', { entries: body.entry.length });
+      res.status(200).send({
+        subject: welcomeMessages.default_welcome.subject,
+        message: message
       });
-
-      // 等待所有消息处理完成并发送响应
-      const responses = await Promise.all(entryPromises);
-      res.status(200).send({ messages: responses.filter(Boolean) });  // 过滤掉可能为 null 的响应
-
-    // 处理 WhatsApp Business Account 事件
-    } else if (body.object === 'whatsapp_business_account') {
-      logger.info('WhatsApp Business Account event:', body);
-      res.status(200).send('EVENT_RECEIVED');
-
-    // 处理未知的 Webhook 事件
     } else {
-      logger.warn('Unknown Webhook object type:', body.object);
-      res.sendStatus(404);
+      res.status(404).send({ message: 'Unknown Webhook object type' });
     }
-
   } catch (error) {
-    // 捕获并记录错误
-    logger.error('Error processing chatbot webhook:', error);
-    res.status(500).send({ error: 'Internal server error' });
+    logger.error('处理聊天机器人 Webhook 时出错:', error);
+    res.status(500).send({ error: '内部服务器错误' });
   }
 });
 
