@@ -1,5 +1,3 @@
-// eslint.config.js
-
 export default [
   {
     // 全局忽略模式

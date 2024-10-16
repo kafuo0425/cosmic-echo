@@ -1,200 +1,153 @@
-# 宇宙回声 Cosmic Echo - 🤖 智能聊天机器人
+# 🌌 宇宙回声 Cosmic Echo
 
-## 🌟 项目简介
+**宇宙回声 Cosmic Echo** 是 **高维空间 High-Dimensional Space** 工作室开发的基于 **Node.js** 和 **Express** 的 Web 应用，旨在通过智能聊天机器人为客户提供即时的情感和心灵指导支持。此项目集成了多个第三方服务，如 **Facebook** 和 **WhatsApp Webhook**，并支持多语言和安全机制。
 
-**宇宙回声 Cosmic Echo** 是一款多功能智能聊天机器人，旨在为“高维空间”工作室提供客户服务。它支持自动回复客户问题、处理课程咨询、预约服务及情感分析，具备多语言能力（中文、英语、马来语）、智能用户识别和情绪感知等功能。
+## 📋 目录
+- [功能概述](#功能概述)
+- [技术栈](#技术栈)
+- [安装与运行](#安装与运行)
+- [脚本命令](#脚本命令)
+- [依赖项](#依赖项)
+- [开发与测试](#开发与测试)
+- [项目结构](#项目结构)
+- [贡献指南](#贡献指南)
+- [许可证](#许可证)
 
-### 🌈 核心功能
+## 🌟 功能概述
+- **多平台消息集成**：支持 **Facebook** 和 **WhatsApp Webhook**，自动处理消息与交互。
+- **多语言支持**：通过 **i18next** 实现，满足不同客户的需求。
+- **情感分析**：提供客户情感分析，为用户提供个性化建议。
+- **用户预约管理**：自动化处理预约。
+- **高效安全**：通过 **Helmet**、**CSRF**、**express-rate-limit** 提供安全保护。
+- **日志记录**：集成 **Winston**，支持灵活日志管理。
 
-1. **🌍 多语言支持**
-   - 自动识别用户语言（中文、英语、马来语）并提供相应回复。
-   - 重要信息（如预约与课程）优先使用中文。
+## 🛠️ 技术栈
+- **Node.js**：JavaScript 运行时环境
+- **Express.js**：Web 框架
+- **Mongoose**：与 MongoDB 交互的 ORM
+- **i18next**：多语言支持库
+- **Winston**：日志管理工具
+- **Jest**：单元测试框架
+- **Husky**：Git 钩子管理工具
 
-2. **👤 用户识别与个性化服务**
-   - **首次联系用户**：提供欢迎信息并介绍课程和服务。
-   - **已预约用户**：提醒待付款或未完成的课程。
-   - **潜在用户**：提供详细服务信息，引导进一步了解。
+## 🚀 安装与运行
+### 环境要求
+- **Node.js**：版本 >= 18 且 < 25
+- **npm**：版本 >= 6
+- **MongoDB** 数据库
 
-3. **📅 课程咨询与预约**
-   - 自动回复课程详细信息，包括时间、费用、内容和报名链接。
-   - 根据用户查询生成动态回复。
-
-4. **💖 情绪感知与情感支持**
-   - 识别用户情绪（如开心、焦虑）并提供相应的情感回应。
-
-5. **👥 转接真人客服**
-   - 用户可请求转接至真人客服，机器人会自动完成转接。
-
-## 📂 项目结构
-
-```
-cosmic-echo/
-├── .github/
-│   └── workflows/
-│       └── ci.yml
-├── .husky/
-│   ├── pre-commit
-│   └── pre-push
-├── config/
-│   ├── courses.json
-│   ├── default.json
-│   ├── development.json
-│   ├── production.json
-│   └── services.json
-├── controllers/
-│   ├── appointmentController.js
-│   ├── chatbotController.js
-│   ├── courseController.js
-│   ├── customerServiceController.js
-│   ├── facebookController.js
-│   ├── personalizationController.js
-│   ├── serviceController.js
-│   ├── userController.js
-│   └── whatsappController.js
-├── locales/
-│   ├── en.json
-│   ├── ms.json
-│   └── zh.json
-├── logs/
-│   └── app.log
-├── middlewares/
-│   └── verifyWebhook.js
-├── models/
-│   ├── index.js
-│   ├── userModel.js
-│   └── userPreferencesModel.js
-├── routes/
-│   ├── api.js
-│   ├── appointmentRoutes.js
-│   ├── courseRoutes.js
-│   ├── facebookWebhook.js
-│   ├── personalizationWebhook.js
-│   ├── serviceRoutes.js
-│   └── whatsappWebhook.js
-├── services/
-│   ├── appointmentService.js
-│   ├── courseService.js
-│   ├── customerService.js
-│   ├── emotionService.js
-│   ├── intentService.js
-│   ├── languageService.js
-│   ├── messageService.js
-│   ├── personalizationService.js
-│   ├── pricingService.js
-│   ├── serviceService.js
-│   ├── userService.js
-│   └── webhookService.js
-├── utils/
-│   ├── errorHandler.js
-│   ├── helper.js
-│   └── logger.js
-├── .env
-├── .gitignore
-├── app.js
-├── package.json
-├── PROJECT_STRUCTURE.md
-└── README.md
-```
-
-## 💻 环境要求
-
-- Node.js 18.x 或更高版本
-- MongoDB 5.x 或更高版本（用于用户和会话数据持久化）
-
-## 🚀 安装步骤
-
-1. **克隆仓库**
+### 安装步骤
+1. **克隆项目**：
    ```bash
-   git clone https://github.com/yourusername/cosmicecho.git
-   cd cosmicecho
+   git clone https://github.com/yourusername/cosmic-echo.git
+   cd cosmic-echo
    ```
-   > 请替换为您的 GitHub 用户名。
-
-2. **安装依赖**
+2. **安装依赖**：
    ```bash
    npm install
    ```
-   > 需要网络连接，确保依赖安装顺利。如遇错误，请检查网络或尝试重新安装。
-
-3. **配置环境变量**
-   在项目根目录下创建 `.env` 文件，并根据需要配置以下变量：
-   ```env
-   PORT=9587
-   NODE_ENV=development
-   DB_URL=mongodb://localhost:27017/cosmicecho
-   # 其他环境变量
-   ```
-
-4. **启动项目**
-   ```bash
-   npm start
-   ```
-   或者在开发模式下运行：
-   ```bash
-   npm run start:dev
-   ```
-
-## 📖 使用方法
-
-1. **访问 API**
-   - 课程信息 API 示例: `GET /api/course-info/:courseKey`
-   - 例如：`GET /api/course-info/pet_emotion_course`
-
-2. **处理课程咨询**
-   - 机器人自动生成课程详细信息的回复，包括时间、地点、费用等。
-   - 示例查询：“课程费用是多少？”会得到类似回复：
+3. **配置环境变量**：复制 `.env.example` 为 `.env`，并填入必要变量。
+4. **启动应用**：
+   - 开发模式：
+     ```bash
+     npm run start:dev
      ```
-     课程费用为：
-     💵 常规费用：RM 2880.00
-     💵 提前报名：RM 2580.00
-     💵 组合优惠：RM 2330.00/人（两人或以上）
+   - 生产模式：
+     ```bash
+     npm start
      ```
+5. **访问应用**：打开 `http://localhost:9587`
 
-3. **🌐 多语言支持**
-   - 自动识别用户语言并提供相应回复，支持中文、英语、马来语。
+## 📜 脚本命令
+- **启动**：`npm start`（生产）、`npm run start:dev`（开发）
+- **代码检查**：`npm run lint`，自动修复：`npm run lint:fix`
+- **测试**：`npm test` 运行单元测试
+- **安全检查**：`npm run check:security`
+- **Git 钩子**：`precommit` 运行代码检查，`prepush` 运行测试
 
-4. **💞 情感支持**
-   - 当检测到用户情绪低落或焦虑时，自动提供情感支持信息。
+## 📦 依赖项
+### 核心依赖
+- **express**：Web 框架
+- **mongoose**：MongoDB 交互
+- **axios**：HTTP 请求工具
+- **helmet**：增强安全性
+- **i18next**：多语言支持
+- **winston**：日志管理
 
-## 📂 Git Hooks 配置
+### 开发依赖
+- **jest**：测试框架
+- **eslint**：代码规范检查
+- **husky**：Git 钩子管理
+- **nodemon**：开发模式自动重载
+- **supertest**：HTTP 接口测试
 
-- **Husky**：用于管理 Git 钩子，确保提交和推送代码前执行 `lint` 和 `test`。
-- **pre-commit**：运行 `lint-staged`，检查代码并修复格式。
-- **pre-push**：运行测试套件，确保代码稳定性。
-
-## ❓ 常见问题
-
-### 🧐 如何添加新课程？
-1. 打开 `config/courses.json` 文件。
-2. 按照现有格式添加新的课程条目，例如：
-   ```json
-   {
-     "courseKey": "new_course",
-     "name": "新课程名称",
-     "dates": ["2024-01-01", "2024-02-01"],
-     "pricing": {
-       "regular": 3000,
-       "earlyBird": 2700,
-       "groupDiscount": 2500
-     }
-   }
+## 🔧 开发与测试
+1. **运行测试**：
+   ```bash
+   npm test
    ```
-3. 确保在 `controllers/courseController.js` 中正确处理新课程的路由。
+2. **代码检查**：
+   ```bash
+   npm run lint
+   ```
+3. **自动修复**：
+   ```bash
+   npm run lint:fix
+   ```
+4. **安全检查**：
+   ```bash
+   npm run check:security
+   ```
 
-### 🛠️ 如何修改现有课程信息？
-1. 打开 `config/courses.json` 文件。
-2. 找到需要修改的课程条目，编辑相应字段如 `dates`、`pricing` 等。
-
-### 🧪 如何测试 API？
-可以使用 Postman 或 curl 测试 API。例如，获取宠物情感课程信息：
-```bash
-curl http://localhost:9587/api/course-info/pet_emotion_course
+## 📂 项目结构
 ```
+C:.
+|   app.js                   # 应用入口
+|   package.json             # 项目依赖和脚本定义
+|   .env                     # 环境变量配置
+|   README.md                # 项目说明
+|
++---config                   # 配置文件
++---middlewares              # 中间件
++---routes                   # 路由
++---controllers              # 控制器
++---services                 # 业务逻辑
++---models                   # 数据模型
++---utils                    # 工具函数
++---locales                  # 多语言支持
++---logs                     # 日志文件
++---coverage                 # 测试覆盖率报告
+```
+### 主要文件和目录
+- **`app.js`**：应用入口，初始化服务器和路由
+- **`config/`**：环境配置文件
+- **`middlewares/`**：处理请求前的逻辑
+- **`routes/`**：路由定义
+- **`controllers/`**：处理 HTTP 请求
+- **`services/`**：业务逻辑实现
+- **`models/`**：数据模型定义
+- **`locales/`**：多语言支持
+- **`logs/`**：日志管理
 
-## 🤝 贡献
-
-欢迎提交 Issues 或 Pull Requests 来改进此项目。如有任何问题或建议，可以通过 GitHub 与我联系。
+## 🤝 贡献指南
+欢迎贡献！步骤如下：
+1. **Fork 项目**：在 GitHub 上 fork 并克隆到本地。
+   ```bash
+   git clone https://github.com/yourusername/cosmic-echo.git
+   ```
+2. **创建分支**：
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **提交代码**：
+   ```bash
+   git commit -m "Add new feature"
+   ```
+4. **推送分支**：
+   ```bash
+   git push origin feature/your-feature-name
+   ```
+5. **提交 Pull Request**：在 GitHub 上提交 PR。
 
 ## 📜 许可证
-
-MIT License
+该项目采用 [MIT 许可证](./LICENSE)，欢迎自由使用与贡献。
