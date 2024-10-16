@@ -1,6 +1,42 @@
 // eslint.config.js
 
-module.exports = [
+export default [
+  {
+    // 全局忽略模式
+    ignores: [
+      'coverage/',
+      'coverage/lcov-report/',
+      'dist/',
+      'build/',
+      'public/',
+      '.env',
+      'webhook-server/.env',
+      'node_modules/',
+      'webhook-server/node_modules/',
+      'logs/',
+      '*.log',
+      'npm-debug.log*',
+      'yarn-debug.log*',
+      'yarn-error.log*',
+      '*.tmp',
+      '*.temp',
+      'tmp/',
+      'temp/',
+      '.DS_Store',
+      'Thumbs.db',
+      'ehthumbs.db',
+      'Desktop.ini',
+      '*nfs*',
+      '.vscode/',
+      '.idea/',
+      '*.suo',
+      '*.ntvs*',
+      '*.njsproj',
+      '*.sln',
+      '.eslintcache',
+      '*.tsbuildinfo',
+    ],
+  },
   {
     // 针对 JavaScript 和 JSX 文件
     files: ['*.js', '*.jsx'],
