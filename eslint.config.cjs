@@ -1,4 +1,4 @@
-export default [
+module.exports = [
   {
     // 全局忽略模式
     ignores: [
@@ -40,7 +40,7 @@ export default [
     files: ['*.js', '*.jsx'],
     languageOptions: {
       ecmaVersion: 2021, // 使用 ECMAScript 2021 版本
-      sourceType: 'module', // 启用 ECMAScript 模块
+      sourceType: 'script', // 使用 CommonJS 模块系统
       globals: {  // 全局变量
         process: 'readonly',
         __dirname: 'readonly',
@@ -66,7 +66,7 @@ export default [
     languageOptions: {
       parser: '@typescript-eslint/parser',  // 使用 TypeScript 解析器
       ecmaVersion: 2021,
-      sourceType: 'module',
+      sourceType: 'module',  // TypeScript 文件可以继续使用 ES 模块
     },
     plugins: {
       '@typescript-eslint': {},  // 启用 TypeScript 插件

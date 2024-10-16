@@ -6,8 +6,8 @@
   "main": "app.js",
   "scripts": {
     "postinstall": "husky install",
-    "lint": "eslint --config eslint.config.mjs .",
-    "lint:fix": "eslint --config eslint.config.mjs . --fix",
+    "lint": "eslint --config eslint.config.cjs .",
+    "lint:fix": "eslint --config eslint.config.cjs . --fix",
     "start": "cross-env NODE_ENV=production PORT=9587 node app.js",
     "start:dev": "cross-env NODE_ENV=development PORT=9587 nodemon app.js",
     "test": "jest --coverage --passWithNoTests",
@@ -33,6 +33,7 @@
     "mongoose": "^8.7.1",
     "p-limit": "^6.1.0",
     "winston": "^3.15.0",
+    "winston-daily-rotate-file": "^5.0.0",
     "ws": "^8.18.0"
   },
   "devDependencies": {
