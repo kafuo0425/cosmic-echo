@@ -2,7 +2,7 @@
   "name": "cosmic-echo",
   "version": "1.1.0",
   "description": "A calm and intuitive chatbot that supports the spiritual and emotional guidance work of High-Dimensional Space.",
-  "type": "module",
+  "type": "commonjs",
   "main": "app.js",
   "scripts": {
     "postinstall": "husky install",
