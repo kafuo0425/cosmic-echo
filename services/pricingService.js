@@ -2,14 +2,12 @@
 
 const logger = require('../utils/logger');
 
-// 模拟的价格表，可以根据实际需要从数据库或其他配置中加载
 const pricingTable = {
     'MY': { '30min': 188, '60min': 258, '90min': 328 },
     'TW': { '30min': 1500, '60min': 2000, '90min': 2500 },
     'US': { '30min': 55, '60min': 75, '90min': 95 }
 };
 
-// 获取指定国家和服务时长的价格
 exports.getPrice = (countryCode, duration) => {
     try {
         const countryPricing = pricingTable[countryCode.toUpperCase()];
@@ -32,7 +30,6 @@ exports.getPrice = (countryCode, duration) => {
     }
 };
 
-// 计算价格折扣
 exports.calculateDiscount = (originalPrice, discountPercentage) => {
     if (discountPercentage < 0 || discountPercentage > 100) {
         logger.warn('无效的折扣百分比:', discountPercentage);

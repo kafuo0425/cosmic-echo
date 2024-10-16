@@ -8,14 +8,13 @@ exports.getPersonalizedMessage = async (req, res) => {
     try {
         const { preferences, userId, message } = req.body;
 
-        // 检测语言并提醒用户
         const lang = detectLanguageAndNotify(message, res);
 
         if (lang === 'zh') {
-            const personalizedMessage = await personalizationService.generatePersonalizedResponse(preferences, userId);
+            const personalizedMessage = await personalizationService.generatePersonalizedResponse(message, preferences, userId);
             res.status(200).json({ message: personalizedMessage });
         } else {
-            res.status(400).json({ message: '个性化服务目前仅以中文提供，请切换至中文进行交流。' });
+            res.status(400).json({ message: 'Personalization is currently only available in Chinese. Please switch to Chinese for communication.' });
         }
     } catch (error) {
         logger.error('Error processing personalized message:', error);

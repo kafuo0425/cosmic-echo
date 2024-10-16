@@ -11,10 +11,10 @@ function verifyWebhook(verifyToken) {
 
     // 验证模式和 token 是否匹配
     if (mode && token === verifyToken) {
-      logger.info(`Webhook verified with token: ${token}`);
+      logger.info(`Webhook verified successfully with token: ${token}, mode: ${mode}`);
       res.status(200).send(challenge);
     } else {
-      logger.warn('Failed webhook verification');
+      logger.warn(`Webhook verification failed. Mode: ${mode}, Token: ${token}`);
       res.status(403).send('Forbidden');
     }
   };

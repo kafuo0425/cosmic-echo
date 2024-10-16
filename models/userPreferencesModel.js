@@ -11,22 +11,31 @@ const userPreferencesSchema = new mongoose.Schema(
       index: true,
     },
     preferences: {
-      type: Object,
-      default: {},
+      language: { type: String, default: 'zh' },  // 默认语言为中文
+      theme: { type: String, default: 'light' },  // 界面主题
+      notification: { type: Boolean, default: true },  // 是否启用通知
+      // 可扩展的其他用户偏好
     },
-    // 添加情感历史，用于个性化消息和情感化回复
     emotionHistory: [
       {
-        emotion: String,
+        emotion: { type: String, required: true },  // 用户情感，如"开心"、"紧张"等
+        intensity: { type: Number, default: 1 },   // 情感强度，1-5 分级
+        source: { type: String, default: 'chatbot' },  // 情感来源，如"chatbot"或"manual"
         timestamp: { type: Date, default: Date.now },
       }
     ],
-    lastInteraction: {  // 记录上次交互时间
+    lastInteraction: {
       type: Date,
       default: Date.now,
     }
   },
   { timestamps: true }
 );
+
+// 自动更新 lastInteraction 的方法
+userPreferencesSchema.methods.updateLastInteraction = function () {
+  this.lastInteraction = Date.now();
+  return this.save();
+};
 
 module.exports = mongoose.model('UserPreferences', userPreferencesSchema);

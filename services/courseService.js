@@ -1,47 +1,70 @@
 // services/courseService.js
 
-const mongoose = require('mongoose');
+const coursesConfig = require('../config/courses.json');
 
-// 课程 Schema 定义
-const courseSchema = new mongoose.Schema({
-    title: { type: String, required: true }, // 课程标题
-    description: { type: String, required: true }, // 课程描述
-    duration: { type: Number, default: 60 }, // 课程时长，默认60分钟
-    language: { type: String, default: 'zh' }, // 课程语言，默认中文
-    attendees: { type: Number, default: 0 }, // 参与人数
-    maxAttendees: { type: Number, default: 20 }, // 最大参与人数
-    date: { type: Date, required: true }, // 课程日期
-    location: { type: String, default: 'online' }, // 课程地点，默认线上
-    instructor: { type: String, required: true }, // 授课老师
-    createdAt: { type: Date, default: Date.now }, // 创建时间
-    updatedAt: { type: Date, default: Date.now } // 更新时间
-});
+class CourseService {
+    async getCourseDetails(courseKey) {
+        try {
+            const course = coursesConfig[courseKey];
+            if (!course) {
+                throw new Error(`未找到课程：${courseKey}`);
+            }
 
-// 创建 Course 模型
-const Course = mongoose.model('Course', courseSchema);
+            return {
+                name: course.name,
+                schedule: course.schedule,
+                welcome_message: course.welcome_message,
+                details: course.details.join("\n"),
+                target_audience: course.target_audience.join("\n"),
+                course_content: course.course_content.join("\n"),
+                highlights: course.highlights.join("\n"),
+                pricing: course.pricing,
+                registration: course.registration
+            };
+        } catch (error) {
+            console.error("获取课程详情时出错:", error);
+            return `课程获取失败，请稍后重试。`;
+        }
+    }
 
-// 创建课程
-exports.createCourse = async (courseData) => {
-    const course = new Course(courseData);
-    return await course.save();
-};
+    generateCourseResponse(courseKey, userQuery) {
+        const courseDetails = this.getCourseDetails(courseKey);
+        if (typeof courseDetails === 'string') {
+            return courseDetails;
+        }
 
-// 获取所有课程
-exports.getAllCourses = async () => {
-    return await Course.find();
-};
+        if (userQuery.includes("费用") || userQuery.includes("价格")) {
+            return this.generatePriceResponse(courseDetails);
+        }
 
-// 获取指定课程
-exports.getCourseById = async (id) => {
-    return await Course.findById(id);
-};
+        return `
+        欢迎了解我们的${courseDetails.name}。\n
+        🗓️ 课程时间：${courseDetails.schedule.dates}，${courseDetails.schedule.time}\n
+        🌍 地点：${courseDetails.schedule.location}\n
+        🔗 ZOOM链接：${courseDetails.schedule.zoom_link}\n
+        🎉 欢迎辞：${courseDetails.welcome_message}\n
+        📋 活动详情：${courseDetails.details}\n
+        🎯 适合人群：${courseDetails.target_audience}\n
+        📚 课程内容：${courseDetails.course_content}\n
+        🌟 课程亮点：${courseDetails.highlights}\n
+        💵 课程费用：\n- 常规费用：RM ${courseDetails.pricing.regular}\n- 提前报名：RM ${courseDetails.pricing.early_bird}\n- 组合优惠：RM ${courseDetails.pricing.group_discount}/人（两人或以上）\n- 复训价格：RM ${courseDetails.pricing.retake_price}\n
+        📅 优惠截止日期：${courseDetails.pricing.discount_deadline}\n
+        📝 报名链接：${courseDetails.registration.link}\n
+        💳 支付说明：${courseDetails.registration.instructions}
+        `;
+    }
 
-// 更新课程
-exports.updateCourse = async (id, updateData) => {
-    return await Course.findByIdAndUpdate(id, updateData, { new: true });
-};
+    generatePriceResponse(courseDetails) {
+        return `
+        课程费用为：\n
+        💵 常规费用：RM ${courseDetails.pricing.regular}\n
+        💵 提前报名：RM ${courseDetails.pricing.early_bird}\n
+        💵 组合优惠：RM ${courseDetails.pricing.group_discount}/人（两人或以上）\n
+        💵 复训价格：RM ${courseDetails.pricing.retake_price}\n
+        📅 提前报名优惠截止日期为：${courseDetails.pricing.discount_deadline}。\n
+        请通过以下链接报名并完成支付：${courseDetails.registration.link}
+        `;
+    }
+}
 
-// 删除课程
-exports.deleteCourse = async (id) => {
-    return await Course.findByIdAndDelete(id);
-};
+module.exports = new CourseService();

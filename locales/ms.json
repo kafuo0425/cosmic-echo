@@ -1,70 +1,70 @@
 {
+  "greetings": {
+    "welcome": {
+      "subject": "Selamat Datang ke High-Dimensional Space",
+      "message": "{{customerName}}, Halo!\n\nSelamat datang ke **High-Dimensional Space**! Saya **Cosmic Echo**, pembantu pintar anda.\n\nHigh-Dimensional Space diasaskan oleh penganalisis emosi dan tingkah laku haiwan yang berpengalaman, **KAFUO**, bertujuan untuk membantu orang mencari ketenangan dan kekuatan dalaman melalui pemahaman emosi dan tingkah laku haiwan.\n\nKami boleh membantu anda dengan perkara berikut:\n- Menjadualkan temujanji dan menguruskan perkhidmatan\n- Menjawab soalan mengenai pertumbuhan rohani dan isu minda-badan-roh\n\nBeritahu saya apa yang anda perlukan, dan kita akan meneroka bersama!\n\nSalam sejahtera,\nHigh-Dimensional Space"
+    }
+  },
+  
+  "language_notice": "{{customerName}}, Halo!\n\nUntuk memudahkan komunikasi, kami menawarkan perkhidmatan dalam bahasa Cina, Melayu, dan Inggeris. Walau bagaimanapun, harap maklum bahawa semua kursus dan perkhidmatan akan disampaikan dalam bahasa Cina. Terima kasih atas kefahaman dan kerjasama anda!",
+  
+  "course_notice": "{{customerName}}, Halo!\n\nAnda boleh menggunakan bahasa Cina, Melayu, atau Inggeris untuk berkomunikasi dengan kami dan melengkapkan pendaftaran. Walau bagaimanapun, untuk memastikan anda dapat mengikuti kursus dengan lancar, kami ingin memaklumkan bahawa kursus ini akan diajar sepenuhnya dalam bahasa Cina. Sila pastikan anda dapat memahami, bercakap, atau menulis dalam bahasa Cina untuk pengalaman pembelajaran yang terbaik. Terima kasih atas sokongan dan kefahaman anda!",
+  
+  "service_notice": "{{customerName}}, Halo!\n\nPerkhidmatan peribadi kami menyokong komunikasi dalam bahasa Cina, Melayu, atau Inggeris untuk memastikan kelancaran komunikasi. Walau bagaimanapun, harap maklum bahawa proses penyampaian perkhidmatan akan dijalankan dalam bahasa Cina. Kami berharap anda mendapat pengalaman perkhidmatan yang terbaik dalam komunikasi berbahasa Cina. Terima kasih atas kerjasama dan kefahaman anda!",
+  
   "general_inquiry": {
-    "subject": "Pertanyaan Umum dan Tempahan",
-    "message": "Saudara/Saudari {{customerName}},\n\nTerima kasih kerana menghubungi **High-Dimensional Space**. Saya ialah Cosmic Echo dan saya dengan sukacitanya bersedia membantu anda.\n\nBerkenaan minat anda terhadap {{serviceName}}, perkhidmatan ini bertujuan membantu anda dan haiwan peliharaan atau diri sendiri dalam membina hubungan emosi yang lebih mendalam. Anda boleh membuat tempahan melalui pautan berikut: [pautan tempahan]. Jika ada sebarang soalan atau memerlukan maklumat lanjut, jangan ragu-ragu untuk menghubungi saya.\n\nSaya berharap dapat menemani anda dalam perjalanan rohani anda.\n\nSalam hormat,\nHigh-Dimensional Space"
+    "subject": "Pertanyaan Umum dan Temujanji",
+    "message": "{{customerName}}, Halo!\n\nTerima kasih kerana menghubungi **High-Dimensional Space**. Kami dengan senang hati akan membantu anda. Jika anda mempunyai sebarang pertanyaan atau keperluan, sila maklumkan kepada kami!\n\nPerkhidmatan yang boleh kami tawarkan termasuk:\n- Analisis emosi dan tingkah laku haiwan peliharaan\n- Penerokaan minda-badan-roh dan pembacaan tenaga\n- Pendaftaran kursus dan pelan pembelajaran\n\nKami menantikan balasan anda, kami akan berusaha sebaik mungkin untuk membantu anda!\n\nSalam sejahtera,\nHigh-Dimensional Space"
   },
-  "emotional_support": {
-    "subject": "Sokongan Emosi",
-    "message": "Saudara/Saudari {{customerName}},\n\nTerima kasih kerana mempercayai kami dengan berkongsi perasaan anda. Di **High-Dimensional Space**, kami memahami kerumitan dan kedalaman emosi. Kami amat bersimpati dengan {{situation}} yang anda hadapi.\n\nKami sentiasa bersedia untuk memberikan {{healingService}} bagi membantu anda melalui masa yang mencabar ini. Anda boleh membuat tempahan melalui pautan berikut: [pautan tempahan], atau balas mesej ini untuk kami mengatur sokongan yang sesuai.\n\nIngatlah, anda tidak keseorangan, kami sentiasa di sini untuk membantu anda.\n\nSalam mesra,\nHigh-Dimensional Space"
+  
+  "pricing": {
+    "subject": "Butiran Harga dan Perkhidmatan",
+    "message": "{{customerName}}, Halo!\n\nTerima kasih atas pertanyaan anda. Berikut adalah butiran harga untuk **{{serviceName}}**:\n\n**Malaysia**\n- Konsultasi 30 minit: RM 188.00\n- Konsultasi 60 minit: RM 258.00\n- Konsultasi 90 minit: RM 328.00\n\n**Taiwan**\n- Konsultasi 30 minit: NTD 1,500.00\n- Konsultasi 60 minit: NTD 2,000.00\n- Konsultasi 90 minit: NTD 2,500.00\n\n**Negara Lain**\n- Konsultasi 30 minit: USD 55.00\n- Konsultasi 60 minit: USD 75.00\n- Konsultasi 90 minit: USD 95.00\n\nSila buat tempahan melalui pautan berikut: [Pautan Tempahan]. Jika anda memerlukan bantuan lanjut, jangan ragu untuk menghubungi saya.\n\nSalam sejahtera,\nHigh-Dimensional Space"
   },
+  
   "course_registration": {
     "subject": "Pendaftaran Kursus dan Pertanyaan",
-    "message": "Saudara/Saudari {{customerName}},\n\nTerima kasih atas minat anda terhadap kursus yang ditawarkan oleh **High-Dimensional Space**! Kursus {{courseName}} kami direka khas untuk {{targetAudience}} dan bertujuan membantu anda memahami lebih mendalam tentang {{courseObjective}}.\n\nKursus ini akan diadakan pada {{date}} secara dalam talian, pada waktu {{time}}. Sila klik pautan berikut untuk maklumat lanjut dan pendaftaran: [pautan pendaftaran].\n\nJika ada sebarang soalan, sila hubungi kami pada bila-bila masa. Kami menantikan peluang untuk bersama-sama menjelajahi ilmu rohani bersama anda.\n\nSalam hormat,\nHigh-Dimensional Space"
+    "message": "{{customerName}}, Halo!\n\nTerima kasih kerana berminat dengan kursus kami di **High-Dimensional Space**! Kursus **{{courseName}}** kami direka khas untuk **{{targetAudience}}**, membantu anda meneroka **{{courseObjective}}** secara mendalam.\n\nKursus ini akan dijalankan secara dalam talian pada **{{date}}**, pada jam **{{time}}**. Sila klik pautan di bawah untuk mengetahui lebih lanjut dan mendaftar: [Pautan Pendaftaran].\n\nJika anda mempunyai sebarang pertanyaan, jangan ragu untuk menghubungi kami. Kami menantikan untuk meneroka misteri minda bersama anda dalam kursus ini!\n\nSalam sejahtera,\nHigh-Dimensional Space"
   },
-  "pricing_inquiry": {
-    "subject": "Pertanyaan Harga atau Perkhidmatan",
-    "message": "Saudara/Saudari {{customerName}},\n\nTerima kasih atas pertanyaan anda. Berikut adalah maklumat harga bagi {{serviceName}}:\n\n**Malaysia**\n- Sesi 30 minit: RM 188.00\n- Sesi 60 minit: RM 258.00\n- Sesi 90 minit: RM 328.00\n\n**Taiwan**\n- Sesi 30 minit: NTD 1,500.00\n- Sesi 60 minit: NTD 2,000.00\n- Sesi 90 minit: NTD 2,500.00\n\n**Luar negara**\n- Sesi 30 minit: USD 55.00\n- Sesi 60 minit: USD 75.00\n- Sesi 90 minit: USD 95.00\n\nSila buat tempahan melalui pautan berikut: [pautan tempahan]. Jika ada sebarang soalan tambahan, jangan segan untuk menghubungi kami.\n\nSalam hormat,\nHigh-Dimensional Space"
+  
+  "support": {
+    "emotional": {
+      "subject": "Sokongan Emosi",
+      "message": "{{customerName}}, Halo!\n\nTerima kasih kerana mempercayai kami dan berkongsi perasaan anda. Di **High-Dimensional Space**, kami memahami kerumitan dan kedalaman emosi. Kami sangat bersimpati dengan **{{situation}}** anda.\n\nKami sedia menawarkan **{{healingService}}** untuk membantu anda melalui masa yang sukar ini. Anda boleh membuat tempahan melalui pautan berikut: [Pautan Tempahan], atau balas terus mesej ini, dan kami akan menyusun sokongan yang sesuai untuk anda.\n\nIngat, anda tidak keseorangan, kami ada bersama anda.\n\nSalam sejahtera,\nHigh-Dimensional Space"
+    },
+    "customer_indecision": {
+      "subject": "Ketidaktentuan atau Belum Bersedia",
+      "message": "{{customerName}}, Halo!\n\nTerima kasih atas kesabaran dan pertimbangan anda. Kami memahami bahawa membuat keputusan memerlukan masa. **High-Dimensional Space** sentiasa ada di sini, sedia memberikan sokongan lebih lanjut bila-bila masa yang anda perlukan.\n\nJika anda mempunyai sebarang pertanyaan atau memerlukan maklumat lanjut, jangan ragu untuk menghubungi kami. Kami berharap anda menemui jawapan dan arah yang sesuai dengan anda!\n\nSalam sejahtera,\nHigh-Dimensional Space"
+    },
+    "transfer_to_human": {
+      "subject": "Permintaan Pindah ke Khidmat Pelanggan Manusia",
+      "message": "{{customerName}}, Halo!\n\nTerima kasih atas kesabaran anda. Kami telah memindahkan permintaan anda kepada khidmat pelanggan manusia kami, dan mereka akan menghubungi anda secepat mungkin.\n\nTerima kasih atas kefahaman dan kerjasama anda, kami berharap anda mendapat bantuan yang diperlukan dengan segera!\n\nSalam sejahtera,\nHigh-Dimensional Space"
+    }
   },
-  "customer_indecision": {
-    "subject": "Pelanggan Ragu-Ragu atau Belum Bersedia",
-    "message": "Saudara/Saudari {{customerName}},\n\nTerima kasih kerana mempertimbangkan perkhidmatan kami. Kami memahami bahawa membuat keputusan memerlukan masa. **High-Dimensional Space** sentiasa di sini dan bersedia membantu anda pada bila-bila masa.\n\nJika ada sebarang soalan atau memerlukan maklumat tambahan, jangan teragak-agak untuk menghubungi kami. Kami berharap anda menemui jalan yang terbaik untuk diri anda.\n\nSalam hormat,\nHigh-Dimensional Space"
+  
+  "technical_support": {
+    "technical_issue": {
+      "subject": "Isu Teknikal atau Kegagalan Sistem Tempahan",
+      "message": "{{customerName}}, Halo!\n\nMaaf kerana anda mengalami masalah semasa menggunakan sistem tempahan. Sila cuba langkah-langkah berikut untuk menyelesaikan masalah ini:\n1. Periksa sama ada sambungan internet anda stabil.\n2. Kosongkan cache pelayar dan log masuk semula.\n3. Cuba gunakan peranti atau pelayar lain.\n\nJika masalah berterusan, sila balas mesej ini atau hubungi kami melalui WhatsApp, dan khidmat pelanggan manusia kami akan membantu anda.\n\nTerima kasih atas kefahaman anda.\n\nSalam sejahtera,\nHigh-Dimensional Space"
+    },
+    "unrecognized_request": {
+      "subject": "Permintaan Tidak Dikenali atau Tidak Dapat Diproses",
+      "message": "{{customerName}}, Halo!\n\nMaaf, saya tidak dapat memahami permintaan anda. Untuk membantu anda dengan lebih baik, sila cuba perkara berikut:\n1. Sederhanakan soalan atau permintaan anda.\n2. Berikan penerangan yang lebih terperinci.\n\nJika masalah masih berterusan, sila hubungi khidmat pelanggan manusia kami melalui [Maklumat Hubungan]. Mereka akan memberikan sokongan lebih lanjut kepada anda.\n\nTerima kasih atas kefahaman dan kerjasama anda.\n\nSalam sejahtera,\nHigh-Dimensional Space"
+    }
   },
-  "transfer_to_human": {
-    "subject": "Permintaan Pindah kepada Khidmat Pelanggan",
-    "message": "Saudara/Saudari {{customerName}},\n\nTerima kasih atas kesabaran anda. Permintaan anda telah dipindahkan kepada khidmat pelanggan kami dan mereka akan menghubungi anda secepat mungkin.\n\nTerima kasih atas kefahaman anda, dan kami berharap anda mendapat bantuan yang diperlukan.\n\nSalam hormat,\nHigh-Dimensional Space"
-  },
-  "end_conversation": {
-    "subject": "Penutupan Perbualan",
-    "message": "Saudara/Saudari {{customerName}},\n\nTerima kasih kerana menghubungi kami. Jika anda telah melengkapkan tempahan, kami amat menghargai kepercayaan anda dan menantikan pertemuan dengan anda. Jika anda masih dalam proses mempertimbangkan, kami sedia memberikan maklumat tambahan jika diperlukan.\n\nSemoga anda menemui kekuatan dan ketenangan dalam perjalanan rohani anda.\n\nSalam hormat,\nHigh-Dimensional Space"
-  },
-  "technical_issue": {
-    "subject": "Masalah Teknikal atau Gangguan Tempahan",
-    "message": "Saudara/Saudari {{customerName}},\n\nKami mohon maaf atas masalah yang anda hadapi semasa menggunakan sistem tempahan kami. Sila cuba langkah-langkah berikut untuk menyelesaikan masalah:\n1. Pastikan sambungan internet anda stabil.\n2. Kosongkan cache pelayar anda dan cuba lagi.\n3. Gunakan pelayar atau peranti lain.\n\nJika masalah masih berlarutan, sila balas mesej ini atau hubungi kami melalui WhatsApp, dan khidmat pelanggan kami akan membantu anda secepat mungkin.\n\nTerima kasih atas kesabaran dan kefahaman anda.\n\nSalam hormat,\nHigh-Dimensional Space"
-  },
-  "refund_request": {
-    "subject": "Permohonan Pengembalian Wang",
-    "message": "Saudara/Saudari {{customerName}},\n\nTerima kasih kerana menghubungi kami. Berdasarkan polisi perkhidmatan kami, setelah pembayaran disahkan, kami tidak dapat menawarkan pengembalian wang. Walau bagaimanapun, anda boleh menukar atau menyesuaikan tempahan anda pada bila-bila masa, dengan memberi notis sekurang-kurangnya 1 jam sebelum sesi bermula.\n\nJika ada sebarang soalan atau memerlukan bantuan lanjut, jangan teragak-agak untuk menghubungi kami.\n\nTerima kasih atas kefahaman dan kerjasama anda.\n\nSalam hormat,\nHigh-Dimensional Space"
-  },
-  "partnership_request": {
-    "subject": "Permohonan Kerjasama atau Perkongsian",
-    "message": "Saudara/Saudari {{customerName}},\n\nTerima kasih atas minat anda untuk bekerjasama dengan **High-Dimensional Space**! Kami amat teruja dengan cadangan anda.\n\nSila jelaskan cadangan kerjasama anda dengan lebih lanjut supaya kami dapat memahami keperluan dan jangkaan anda dengan lebih baik. Anda boleh balas mesej ini atau menghubungi kami melalui e-mel {{emailAddress}}.\n\nKami berharap dapat bekerjasama dengan anda untuk mencipta pengalaman rohani dan emosi yang bermakna.\n\nSalam hormat,\nHigh-Dimensional Space"
-  },
-  "positive_feedback": {
-    "subject": "Maklum Balas Positif dan Ucapan Terima Kasih",
-    "message": "Saudara/Saudari {{customerName}},\n\nTerima kasih atas sokongan dan maklum balas positif anda terhadap **High-Dimensional Space**! Ulasan anda sangat bermakna bagi kami, dan ia memberi semangat untuk kami terus meningkatkan kualiti perkhidmatan agar dapat membantu lebih ramai orang serta haiwan peliharaan menemui ketenangan dan kekuatan dalaman.\n\nJika anda mempunyai sebarang cadangan atau memerlukan bantuan lanjut, sila hubungi kami pada bila-bila masa. Kami berharap dapat terus membantu anda pada masa akan datang.\n\nSemoga anda dan haiwan peliharaan anda sentiasa sihat dan bahagia.\n\nSalam hormat,\nHigh-Dimensional Space"
-  },
-  "negative_feedback": {
-    "subject": "Maklum Balas Negatif atau Aduan",
-    "message": "Saudara/Saudari {{customerName}},\n\nKami memohon maaf atas pengalaman yang tidak mencapai jangkaan anda di **High-Dimensional Space**. Kami kesal atas sebarang kesulitan yang timbul.\n\nSila jelaskan lebih lanjut tentang masalah yang anda hadapi supaya kami dapat memahami dengan lebih baik dan melakukan penambahbaikan yang sewajarnya. Anda boleh balas mesej ini atau menghubungi kami melalui e-mel {{emailAddress}}.\n\nTerima kasih atas maklum balas anda. Kami akan berusaha untuk menyelesaikan masalah ini dan meningkatkan kualiti perkhidmatan kami.\n\nSalam hormat,\nHigh-Dimensional Space"
-  },
-  "faq": {
-    "subject": "Soalan Lazim (FAQ)",
-    "message": "Saudara/Saudari {{customerName}},\n\nTerima kasih atas minat anda terhadap **High-Dimensional Space**. Berikut adalah jawapan kepada beberapa soalan lazim yang mungkin dapat membantu:\n\n**1. Bagaimana untuk membuat tempahan?**\nAnda boleh membuat tempahan melalui pautan berikut: [pautan tempahan], atau hubungi kami melalui Facebook dan WhatsApp.\n\n**2. Apakah kaedah pembayaran yang diterima?**\nKami menerima pembayaran melalui PUBLIC BANK (Malaysia), 台北富邦銀行 (Taiwan), dan PayPal untuk pelanggan antarabangsa.\n\n**3. Berapa awal perlu memaklumkan untuk membatalkan atau menukar tempahan?**\nSila berikan notis sekurang-kurangnya 1 jam sebelum sesi bermula bagi sebarang perubahan tempahan.\n\n**4. Adakah kursus ini dalam talian atau bersemuka?**\nKursus kami dijalankan secara dalam talian melalui Zoom, jadi anda boleh menyertainya dari rumah.\n\nJika ada sebarang soalan lain, jangan segan untuk menghubungi kami. Kami akan dengan senang hati membantu anda.\n\nSalam hormat,\nHigh-Dimensional Space"
-  },
-  "special_request": {
-    "subject": "Permintaan Khas atau Disesuaikan",
-    "message": "Saudara/Saudari {{customerName}},\n\nTerima kasih kerana menghubungi **High-Dimensional Space**. Kami dengan sukacitanya menyediakan perkhidmatan yang disesuaikan bagi memenuhi keperluan khas anda.\n\nSila terangkan dengan lebih lanjut keperluan atau matlamat anda supaya kami dapat merangka pelan yang paling sesuai untuk anda. Anda boleh balas mesej ini atau menghubungi kami melalui e-mel {{emailAddress}}.\n\nKami berharap dapat memberikan sokongan yang disesuaikan khas untuk anda.\n\nSalam hormat,\nHigh-Dimensional Space"
-  },
-  "holiday_greetings": {
-    "subject": "Ucapan Perayaan dan Notis Acara Istimewa",
-    "message": "Saudara/Saudari {{customerName}},\n\nSelamat menyambut {{holidayName}}! Pada waktu istimewa ini, **High-Dimensional Space** ingin mengucapkan terima kasih atas sokongan dan kepercayaan anda.\n\nSebagai tanda penghargaan, kami dengan sukacitanya menawarkan {{eventDetails}}. Sila klik pautan berikut untuk maklumat lanjut dan menyertai acara ini: [pautan acara].\n\nJika ada sebarang soalan atau memerlukan bantuan, sila hubungi kami pada bila-bila masa. Kami berharap anda menemui ketenangan dan kebahagiaan pada tahun yang baru ini.\n\nSalam hormat,\nHigh-Dimensional Space"
-  },
-  "post_service_followup": {
-    "subject": "Susulan Selepas Kursus atau Perkhidmatan",
-    "message": "Saudara/Saudari {{customerName}},\n\nKami berharap anda telah mendapat manfaat daripada {{courseOrServiceName}} di **High-Dimensional Space**. Kami sangat mengambil berat tentang perjalanan pembelajaran anda dan ingin mendengar maklum balas anda.\n\nJika anda mempunyai sebarang pandangan atau memerlukan sokongan lanjut, sila hubungi kami. Kami komited untuk terus memperbaiki dan meningkatkan perkhidmatan kami demi kebaikan anda.\n\nTerima kasih kerana memilih kami. Semoga anda terus menemui kekuatan dan keharmonian dalam masa yang akan datang.\n\nSalam hormat,\nHigh-Dimensional Space"
-  },
-  "unrecognized_request": {
-    "subject": "Permintaan Tidak Dikenali atau Tidak Dapat Diproses",
-    "message": "Saudara/Saudari {{customerName}},\n\nKami memohon maaf kerana tidak dapat memahami permintaan anda. Untuk membantu kami lebih baik, anda boleh cuba langkah berikut:\n\n1. Ringkaskan soalan atau permintaan anda\n2. Jelaskan dengan lebih terperinci jenis bantuan yang anda perlukan\n\nJika masalah masih berlanjutan, sila hubungi khidmat pelanggan kami melalui: [maklumat hubungan].\n\nTerima kasih atas kefahaman dan kerjasama anda.\n\nSalam hormat,\nHigh-Dimensional Space"
+  
+  "followup": {
+    "post_service": {
+      "subject": "Tindak Lanjut Selepas Perkhidmatan",
+      "message": "{{customerName}}, Halo!\n\nKami berharap anda mendapat sesuatu yang bermanfaat daripada pengalaman anda di **High-Dimensional Space** semasa **{{courseOrServiceName}}**. Kami sangat prihatin dengan pembelajaran dan pertumbuhan anda, dan kami menantikan untuk mendengar pengalaman anda.\n\nJika anda mempunyai sebarang maklum balas atau memerlukan sokongan lebih lanjut, jangan ragu untuk menghubungi kami. Kami komited untuk terus memperbaiki perkhidmatan kami untuk menyokong anda dan pelanggan lain dengan lebih baik.\n\nTerima kasih kerana memilih kami, dan kami mendoakan anda terus mendapat kekuatan dan ketenangan dalam hari-hari mendatang.\n\nSalam sejahtera,\nHigh-Dimensional Space"
+    },
+    "positive_feedback": {
+      "subject": "Maklum Balas Positif dan Terima Kasih",
+      "message": "{{customerName}}, Halo!\n\nTerima kasih banyak atas sokongan dan maklum balas positif anda untuk **High-Dimensional Space**! Maklum balas anda sangat penting bagi kami, mendorong kami untuk terus memperbaiki perkhidmatan kami dan membantu lebih ramai orang dan haiwan peliharaan menemui ketenangan dan kekuatan dalaman.\n\nJika anda mempunyai cadangan lanjut atau memerlukan lebih banyak sokongan, jangan ragu untuk menghubungi kami. Kami menantikan untuk terus membantu anda pada masa hadapan!\n\nSemoga anda dan haiwan peliharaan anda bahagia dan sejahtera.\n\nSalam sejahtera,\nHigh-Dimensional Space"
+    },
+    "negative_feedback": {
+      "subject": "Maklum Balas Negatif atau Aduan",
+      "message": "{{customerName}}, Halo!\n\nKami sangat kesal mendengar bahawa pengalaman anda di **High-Dimensional Space** tidak memenuhi jangkaan anda. Kami memohon maaf yang sebesar-besarnya untuk perkara ini.\n\nSila terangkan masalah atau ketidakpuasan hati anda dengan lebih terperinci supaya kami dapat memahami dan memperbaikinya. Anda boleh membalas mesej ini atau menghubungi kami melalui e-mel di {{emailAddress}}.\n\nTerima kasih atas maklum balas anda, kami akan berusaha sedaya upaya untuk menyelesaikan masalah anda dan meningkatkan kualiti perkhidmatan kami.\n\nSalam sejahtera,\nHigh-Dimensional Space"
+    }
   }
 }

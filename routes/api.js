@@ -2,10 +2,29 @@
 
 const express = require("express");
 const router = express.Router();
+const logger = require('../utils/logger');
 
-// 通用 API 路由，未来可以在此基础上扩展
+// 引入各个模块的路由
+const courseRoutes = require('./courseRoutes');
+const facebookWebhookRoutes = require('./facebookWebhook');
+const personalizationWebhookRoutes = require('./personalizationWebhook');
+const whatsappWebhookRoutes = require('./whatsappWebhook');
+
+// 挂载各个模块的路由
+router.use('/courses', courseRoutes);  // 课程相关路由
+router.use('/facebook', facebookWebhookRoutes);  // Facebook Webhook
+router.use('/personalization', personalizationWebhookRoutes);  // 个性化 Webhook
+router.use('/whatsapp', whatsappWebhookRoutes);  // WhatsApp Webhook
+
+// 默认路由
 router.get('/', (req, res) => {
   res.status(200).send('Welcome to Cosmic Echo API');
+});
+
+// 全局错误处理
+router.use((err, req, res, next) => {
+  logger.error('API Error:', err.message);
+  res.status(err.status || 500).json({ error: err.message });
 });
 
 module.exports = router;

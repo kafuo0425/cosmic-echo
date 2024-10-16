@@ -1,15 +1,15 @@
 // controllers/whatsappController.js
 
-const receiveMessage = (req, res) => {
-  const { body } = req;
+const webhookService = require('../services/webhookService');
+const logger = require('../utils/logger');
 
-  // 处理接收到的 WhatsApp 消息
-  console.log('Received WhatsApp message:', body);
-
-  // 回复成功
-  res.status(200).send('WhatsApp message received');
-};
-
-module.exports = {
-  receiveMessage,
+exports.receiveMessage = (req, res) => {
+    try {
+        const eventPayload = req.body;
+        const result = webhookService.processWebhookEvent('whatsapp', eventPayload);
+        res.status(200).send(result);
+    } catch (error) {
+        logger.error('Error processing WhatsApp Webhook message:', error);
+        res.status(500).send({ error: 'Failed to process Webhook' });
+    }
 };

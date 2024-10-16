@@ -1,59 +1,70 @@
 {
-  "language_notice": "所有课程和服务将以中文提供，请使用中文进行交流。",
-  "course_notice": "课程仅以中文提供，请切换至中文进行注册。",
-  "service_notice": "个性化服务目前仅以中文提供，请切换至中文进行交流。",
-  "general_inquiry": {
-    "subject": "一般咨询与预约",
-    "message": "{{customerName}}，您好，\n\n感谢您联系 **高维空间 High-Dimensional Space**..."
-  },
-    "pricing": {
-      "subject": "价格或服务内容询问",
-      "message": "{{customerName}}，您好，\n\n感谢您的询问。以下是 {{serviceName}} 的价格详情：\n\n**马来西亚地区**\n- 30分钟咨询：RM 188.00\n- 60分钟咨询：RM 258.00\n- 90分钟咨询：RM 328.00\n\n**台湾地区**\n- 30分钟咨询：NTD 1,500.00\n- 60分钟咨询：NTD 2,000.00\n- 90分钟咨询：NTD 2,500.00\n\n**其他地区**\n- 30分钟咨询：USD 55.00\n- 60分钟咨询：USD 75.00\n- 90分钟咨询：USD 95.00\n\n请通过以下链接预约：[预约链接]。如需更多信息，请随时联系。\n\n祝好，\n高维空间 High-Dimensional Space"
-    },
-    "course_registration": {
-      "subject": "课程报名与相关咨询",
-      "message": "{{customerName}}，您好，\n\n感谢您对 **高维空间 High-Dimensional Space** 的课程感兴趣！我们的 {{courseName}} 专为{{targetAudience}}设计，帮助您深入探索 {{courseObjective}}。\n\n课程将于 {{date}} 在线举行，时间为 {{time}}。请点击以下链接了解更多并报名：[报名链接]。\n\n如有任何问题，欢迎随时联系。期待在课程中与您共同探讨心灵奥秘。\n\n祝好，\n高维空间 High-Dimensional Space"
+  "greetings": {
+    "welcome": {
+      "subject": "欢迎来到高维空间",
+      "message": "{{customerName}}，您好！\n\n欢迎来到 **高维空间 High-Dimensional Space**！我是 **宇宙回声 Cosmic Echo**，您的智能小助手。\n\n高维空间由资深动物情感与行为分析师 **卡芙欧（KAFUO）** 创立，致力于通过洞察动物情感与行为，帮助人们找到内在的平静与力量。\n\n我们可以为您提供以下支持：\n- 安排预约与管理服务\n- 解答心灵成长与身心灵相关问题\n\n请告诉我您的需求，我们将共同探索！\n\n祝好，\n高维空间 High-Dimensional Space"
     }
   },
-
+  
+  "language_notice": "{{customerName}}，您好！\n\n为了方便与您沟通，我们提供中文、马来语和英语三种语言的交流服务。但请注意，所有课程和服务最终将以中文授课和提供，感谢您的理解与配合！",
+  
+  "course_notice": "{{customerName}}，您好！\n\n您可以使用中文、马来语或英语与我们沟通并完成报名。但为了确保您能够顺利参与课程，我们提醒您本课程将全程使用中文授课。请确保您能够听或读写中文，以便获得最佳学习体验。谢谢您的支持与理解！",
+  
+  "service_notice": "{{customerName}}，您好！\n\n我们的个性化服务支持使用中文、马来语或英语与您沟通，以确保交流顺畅。然而，请注意，服务的实际提供过程将主要以中文进行。我们希望您在中文交流中获得最好的服务体验，感谢您的配合与理解！",
+  
+  "general_inquiry": {
+    "subject": "一般咨询与预约",
+    "message": "{{customerName}}，您好！\n\n感谢您联系 **高维空间 High-Dimensional Space**。我们非常愿意为您提供帮助。如果您有任何问题或需求，欢迎随时告知我们！\n\n我们可以为您提供的服务包括：\n- 宠物情感与行为分析\n- 身心灵探索与能量解读\n- 课程报名与学习计划\n\n期待您的回复，我们会竭诚为您服务！\n\n祝好，\n高维空间 High-Dimensional Space"
+  },
+  
+  "pricing": {
+    "subject": "价格与服务详情",
+    "message": "{{customerName}}，您好！\n\n感谢您的询问。以下是 **{{serviceName}}** 的价格详情：\n\n**马来西亚地区**\n- 30分钟咨询：RM 188.00\n- 60分钟咨询：RM 258.00\n- 90分钟咨询：RM 328.00\n\n**台湾地区**\n- 30分钟咨询：NTD 1,500.00\n- 60分钟咨询：NTD 2,000.00\n- 90分钟咨询：NTD 2,500.00\n\n**其他地区**\n- 30分钟咨询：USD 55.00\n- 60分钟咨询：USD 75.00\n- 90分钟咨询：USD 95.00\n\n请通过以下链接预约：[预约链接]。如需更多帮助，请随时联系我。\n\n祝好，\n高维空间 High-Dimensional Space"
+  },
+  
+  "course_registration": {
+    "subject": "课程报名与咨询",
+    "message": "{{customerName}}，您好！\n\n感谢您对我们 **高维空间 High-Dimensional Space** 的课程感兴趣！我们的 **{{courseName}}** 专为 **{{targetAudience}}** 设计，帮助您深入探索 **{{courseObjective}}**。\n\n课程将于 **{{date}}** 通过线上进行，时间为 **{{time}}**。请点击以下链接了解更多信息并报名：[报名链接]。\n\n如有任何问题，请随时联系我们。期待在课程中与您一起探索心灵奥秘！\n\n祝好，\n高维空间 High-Dimensional Space"
+  },
+  
   "support": {
     "emotional": {
       "subject": "情感支持",
-      "message": "{{customerName}}，您好，\n\n感谢您信任我们分享您的心情。在 **高维空间 High-Dimensional Space**，我们深知情感的复杂性与深度。对于您的{{situation}}，我们深感同情。\n\n我们随时准备提供{{healingService}}，帮助您度过这段艰难时刻。您可以通过以下链接预约：[预约链接]，或者直接回复此消息，我们将为您安排合适的支持。\n\n请记住，您并不孤单，我们在这里陪伴您。\n\n祝好，\n高维空间 High-Dimensional Space"
+      "message": "{{customerName}}，您好！\n\n感谢您信任我们并分享您的感受。在 **高维空间 High-Dimensional Space**，我们理解情感的复杂性与深度。对于您的 **{{situation}}**，我们深表同情。\n\n我们随时准备提供 **{{healingService}}**，帮助您度过这段艰难时光。您可以通过以下链接预约：[预约链接]，也可以直接回复此消息，我们将为您安排合适的支持。\n\n请记住，您并不孤单，我们在这里陪伴您。\n\n祝好，\n高维空间 High-Dimensional Space"
     },
     "customer_indecision": {
       "subject": "客户犹豫不决或尚未准备好",
-      "message": "{{customerName}}，您好，\n\n感谢您的考虑。我们理解做出决定需要时间。**高维空间 High-Dimensional Space** 始终在此，随时准备为您提供支持。\n\n如有任何疑问或需要更多信息，请随时与我们联系。希望您找到适合自己的答案和方向。\n\n祝好，\n高维空间 High-Dimensional Space"
+      "message": "{{customerName}}，您好！\n\n感谢您的耐心与考虑。我们理解做出决定需要时间。**高维空间 High-Dimensional Space** 始终在此，随时准备为您提供进一步的支持。\n\n如有任何疑问或需要更多信息，请随时与我们联系。希望您找到适合自己的答案和方向！\n\n祝好，\n高维空间 High-Dimensional Space"
     },
     "transfer_to_human": {
-      "subject": "客户表达转接真人客服的需求",
-      "message": "{{customerName}}，您好，\n\n感谢您的耐心等待。我已将您的请求转接至我们的真人客服，他们将尽快与您联系。\n\n感谢您的理解与配合，祝您顺利获得所需的帮助。\n\n祝好，\n高维空间 High-Dimensional Space"
+      "subject": "转接真人客服的需求",
+      "message": "{{customerName}}，您好！\n\n感谢您的耐心等待。我们已经将您的请求转接至我们的真人客服，他们将尽快与您联系。\n\n感谢您的理解与配合，祝您顺利获得所需的帮助！\n\n祝好，\n高维空间 High-Dimensional Space"
     }
   },
-
-  "followup": {
-    "post_service": {
-      "subject": "课程或服务后的跟进",
-      "message": "{{customerName}}，您好，\n\n希望您在 **高维空间 High-Dimensional Space** 的 {{courseOrServiceName}} 中有所收获。我们非常关心您的学习和成长过程，期待了解您的体验和感受。\n\n如果您有任何反馈或需要进一步的支持，请随时与我们联系。我们致力于不断改进和提升，以更好地服务于您和其他客户。\n\n感谢您选择我们的服务，祝愿您在未来的日子里继续找到力量与和谐。\n\n祝好，\n高维空间 High-Dimensional Space"
-    },
-    "positive_feedback": {
-      "subject": "正面反馈与感谢",
-      "message": "{{customerName}}，您好，\n\n非常感谢您对 **高维空间 High-Dimensional Space** 的肯定与支持！您的反馈对我们来说非常重要，激励我们不断提升服务质量，帮助更多人和宠物找到内在的平静与力量。\n\n如果您有任何进一步的建议或需要更多的支持，请随时与我们联系。期待在未来继续为您提供帮助。\n\n祝愿您和您的宠物幸福安康。\n\n祝好，\n高维空间 High-Dimensional Space"
-    },
-    "negative_feedback": {
-      "subject": "负面反馈或投诉",
-      "message": "{{customerName}}，您好，\n\n非常抱歉听到您在 **高维空间 High-Dimensional Space** 的体验未能达到您的期望。我们深感抱歉给您带来的不便与困扰。\n\n请您详细描述您的问题或不满之处，以便我们能够更好地理解并及时改进。您可以回复此消息，或通过电子邮件 {{emailAddress}} 联系我们。\n\n感谢您的反馈，我们将尽全力解决您的问题，提升我们的服务质量。\n\n祝好，\n高维空间 High-Dimensional Space"
-    }
-  },
-
+  
   "technical_support": {
     "technical_issue": {
       "subject": "技术问题或预约系统故障",
-      "message": "{{customerName}}，您好，\n\n抱歉您在使用预约系统时遇到问题。请尝试以下步骤解决：\n1. 确保网络连接正常。\n2. 清除浏览器缓存。\n3. 换一个浏览器或设备重试。\n\n如问题仍未解决，请回复此消息或通过 WhatsApp 联系我们，真人客服将为您提供帮助。\n\n感谢您的理解。\n\n祝好，\n高维空间 High-Dimensional Space"
+      "message": "{{customerName}}，您好！\n\n抱歉您在使用预约系统时遇到问题。请尝试以下步骤解决：\n1. 检查网络连接是否正常。\n2. 清除浏览器缓存并重新登录。\n3. 更换设备或浏览器重试。\n\n如问题仍未解决，请回复此消息或通过 WhatsApp 联系我们，真人客服将为您提供帮助。\n\n感谢您的理解。\n\n祝好，\n高维空间 High-Dimensional Space"
     },
     "unrecognized_request": {
       "subject": "未识别或无法处理的请求",
-      "message": "{{customerName}}，您好，\n\n抱歉，我未能理解您的请求。为了更好地协助您，您可以尝试以下方式：\n\n1. 简化您的问题或需求\n2. 详细描述您需要的帮助\n\n如果问题仍然存在，请通过以下方式联系我们的真人客服，他们将为您提供进一步的帮助：[联系方式]\n\n感谢您的理解与配合。\n\n祝好，\n高维空间 High-Dimensional Space"
+      "message": "{{customerName}}，您好！\n\n抱歉，我未能理解您的请求。为了更好地帮助您，请尝试以下方式：\n1. 简化您的问题或需求。\n2. 提供更多详细的描述。\n\n如问题仍然存在，请通过以下方式联系我们的真人客服：[联系方式]。他们将为您提供进一步的支持。\n\n感谢您的理解与配合。\n\n祝好，\n高维空间 High-Dimensional Space"
+    }
+  },
+  
+  "followup": {
+    "post_service": {
+      "subject": "服务后的跟进",
+      "message": "{{customerName}}，您好！\n\n希望您在 **高维空间 High-Dimensional Space** 的 **{{courseOrServiceName}}** 中有所收获。我们非常关心您的学习与成长，期待了解您的体验与感受。\n\n如果您有任何反馈或需要进一步的支持，请随时联系我们。我们致力于不断改进服务，以更好地为您和其他客户提供支持。\n\n感谢您选择我们，祝愿您在未来的日子里继续找到力量与平静。\n\n祝好，\n高维空间 High-Dimensional Space"
+    },
+    "positive_feedback": {
+      "subject": "正面反馈与感谢",
+      "message": "{{customerName}}，您好！\n\n非常感谢您对 **高维空间 High-Dimensional Space** 的支持与肯定！您的反馈对我们来说非常重要，激励我们不断提升服务质量，帮助更多人和宠物找到内在的平静与力量。\n\n如有任何进一步的建议或需要更多支持，请随时与我们联系。期待在未来继续为您提供帮助！\n\n祝愿您和您的宠物幸福安康。\n\n祝好，\n高维空间 High-Dimensional Space"
+    },
+    "negative_feedback": {
+      "subject": "负面反馈或投诉",
+      "message": "{{customerName}}，您好！\n\n非常抱歉听到您在 **高维空间 High-Dimensional Space** 的体验未能达到您的期望。我们为此深感抱歉。\n\n请您详细描述您的问题或不满之处，以便我们更好地理解并改进。您可以回复此消息或通过电子邮件 {{emailAddress}} 联系我们。\n\n感谢您的反馈，我们将全力解决您的问题，提升服务质量。\n\n祝好，\n高维空间 High-Dimensional Space"
     }
   }
 }

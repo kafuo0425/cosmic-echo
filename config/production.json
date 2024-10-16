@@ -1,12 +1,12 @@
 {
   "db": {
-    "uri": "${MONGODB_URI}?retryWrites=true&w=majority"
+    "uri": "${MONGODB_URI:-mongodb://localhost:27017/cosmic-echo}?retryWrites=true&w=majority"
   },
   "logger": {
     "level": "error",
     "file": "${LOG_FILE_PATH:-logs/app.log}"
   },
   "jwt": {
-    "secret": "${JWT_SECRET}"
+    "secret": "${JWT_SECRET:-default_jwt_secret}"
   }
 }

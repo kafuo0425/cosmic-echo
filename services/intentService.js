@@ -5,7 +5,6 @@ const compromise = require('compromise');
 const { detectLanguage } = require('./languageService');
 const sentiment = require('sentiment');
 
-// 多语言意图关键词库，包含常见的同义词、口语化表达、简繁体字兼容
 const intentLibrary = {
     'zh': {
         'greeting': ['你好', '早上好', '下午好', '晚上好', '嗨', '您好', '问好', '哈喽', '嗨嗨', '您好呀'],
@@ -28,46 +27,29 @@ const intentLibrary = {
         'courseInfo': ['course', 'class', 'session', 'workshop', 'seminar', 'training', 'lesson', 'details on class', 'schedule course'],
         'emotionAnalysis': ['emotion', 'feeling', 'behavior', 'analysis', 'pet behavior', 'pet emotion', 'emotional health', 'animal behavior', 'feeling analysis'],
         'encouragement': ['still thinking', 'considering', 'not decided', 'need more time', 'unsure', 'couldn’t decide', 'need to know more']
-    },
-    'ms': {
-        'greeting': ['selamat pagi', 'hello', 'hai', 'selamat tengahari', 'selamat petang', 'selamat malam'],
-        'farewell': ['selamat tinggal', 'jumpa lagi', 'selamat jalan', 'sampai jumpa'],
-        'appointment': ['tempah', 'janji temu', 'susun', 'buat temujanji', 'mesyuarat', 'tempahan', 'atur janji'],
-        'support': ['bantuan', 'sokongan', 'isu', 'masalah', 'bimbingan', 'pertanyaan'],
-        'pricing': ['harga', 'kos', 'yuran', 'caj', 'kadar', 'sebut harga', 'bayaran', 'anggaran'],
-        'realPersonRequest': ['perkhidmatan manusia', 'ejen', 'manusia', 'bantuan manusia'],
-        'courseInfo': ['kursus', 'kelas', 'sesi', 'latihan', 'bengkel', 'maklumat kursus'],
-        'emotionAnalysis': ['emosi', 'perasaan', 'tingkah laku', 'analisis', 'emosi haiwan', 'analisis perasaan'],
-        'encouragement': ['masih berfikir', 'pertimbangan', 'tidak pasti', 'tidak yakin', 'perlu masa']
     }
 };
 
-// NLP 处理输入并转换为小写，进行文本简化处理
 const processMessage = (message) => {
     const lowerMessage = message.toLowerCase();
     const doc = compromise(lowerMessage).normalize();
     return doc.text();
 };
 
-// 检测用户情感
 const detectSentiment = (message) => {
     const result = sentiment(message);
     return result;
 };
 
-// 根据语言检测并使用对应语言的意图库
 exports.detectIntent = (message) => {
     const processedMessage = processMessage(message);
     const detectedLanguage = detectLanguage(processedMessage);
-
-    // 根据语言获取对应的意图库
     const intents = intentLibrary[detectedLanguage] || intentLibrary['en'];
 
     logger.info(`Detecting intent for message in ${detectedLanguage}:`, processedMessage);
 
     let detectedIntents = [];
 
-    // 遍历意图和相关的关键词，检测是否匹配
     for (const [intent, keywords] of Object.entries(intents)) {
         if (keywords.some(keyword => processedMessage.includes(keyword))) {
             logger.info(`Intent detected: ${intent}`);
@@ -75,7 +57,6 @@ exports.detectIntent = (message) => {
         }
     }
 
-    // 检测情感以进行递进处理
     const sentimentResult = detectSentiment(processedMessage);
     logger.info('Sentiment analysis result:', sentimentResult);
 
@@ -84,7 +65,6 @@ exports.detectIntent = (message) => {
         return 'unknown';
     }
 
-    // 如果有多个意图，且情感分析显示用户紧急或负面情绪，则优先选择“support”或“realPersonRequest”意图
     if (detectedIntents.length > 1) {
         if (sentimentResult.score < 0) {
             if (detectedIntents.includes('support')) {
@@ -93,8 +73,8 @@ exports.detectIntent = (message) => {
                 return 'realPersonRequest';
             }
         }
-        return detectedIntents[0]; // 返回第一个匹配到的意图
+        return detectedIntents[0];
     }
 
-    return detectedIntents[0]; // 返回唯一匹配到的意图
+    return detectedIntents[0];
 };

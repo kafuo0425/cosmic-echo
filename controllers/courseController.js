@@ -6,19 +6,19 @@ const courseService = require('../services/courseService');
 const logger = require("../utils/logger");
 
 router.get('/:courseId', async (req, res) => {
-  try {
-    const courseId = req.params.courseId;
-    const courseDetails = courseService.getCourseDetails(courseId);
+    try {
+        const courseId = req.params.courseId;
+        const courseDetails = await courseService.getCourseDetails(courseId);
 
-    if (courseDetails) {
-      res.status(200).send(courseDetails);
-    } else {
-      res.status(404).send({ error: "未找到该课程" });
+        if (courseDetails) {
+            res.status(200).send(courseDetails);
+        } else {
+            res.status(404).send({ error: "Course not found" });
+        }
+    } catch (error) {
+        logger.error('Error retrieving course details:', error);
+        res.status(500).send({ error: 'Internal server error' });
     }
-  } catch (error) {
-    logger.error('获取课程详情时出错:', error);
-    res.status(500).send({ error: '内部服务器错误' });
-  }
 });
 
 module.exports = router;

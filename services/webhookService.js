@@ -2,43 +2,39 @@
 
 const logger = require('../utils/logger');
 
-// 处理不同平台的 Webhook 事件
 exports.processWebhookEvent = (eventType, eventPayload) => {
     try {
         switch (eventType) {
             case 'facebook':
+                logger.info('Processing Facebook event:', eventPayload);
                 return handleFacebookEvent(eventPayload);
             case 'whatsapp':
+                logger.info('Processing WhatsApp event:', eventPayload);
                 return handleWhatsAppEvent(eventPayload);
             case 'custom':
+                logger.info('Processing custom webhook event:', eventPayload);
                 return handleCustomWebhook(eventPayload);
             default:
-                logger.warn('未识别的 Webhook 类型:', eventType);
+                logger.warn('Unrecognized Webhook type:', eventType);
                 return { error: 'Unknown webhook type' };
         }
     } catch (error) {
-        logger.error('Webhook 事件处理失败:', error);
+        logger.error('Failed to process webhook event:', error);
         throw new Error('Webhook processing failed');
     }
 };
 
-// 处理 Facebook Webhook 事件
 const handleFacebookEvent = (payload) => {
-    logger.info('处理 Facebook Webhook 事件:', payload);
-    // 在这里实现具体的业务逻辑
-    return { message: 'Facebook event processed' };
+    logger.info('Handling Facebook Webhook event:', payload);
+    return { message: 'Facebook event processed', payload };
 };
 
-// 处理 WhatsApp Webhook 事件
 const handleWhatsAppEvent = (payload) => {
-    logger.info('处理 WhatsApp Webhook 事件:', payload);
-    // 在这里实现具体的业务逻辑
-    return { message: 'WhatsApp event processed' };
+    logger.info('Handling WhatsApp Webhook event:', payload);
+    return { message: 'WhatsApp event processed', payload };
 };
 
-// 处理自定义 Webhook 事件
 const handleCustomWebhook = (payload) => {
-    logger.info('处理自定义 Webhook 事件:', payload);
-    // 在这里实现具体的业务逻辑
-    return { message: 'Custom webhook event processed' };
+    logger.info('Handling custom Webhook event:', payload);
+    return { message: 'Custom webhook event processed', payload };
 };
