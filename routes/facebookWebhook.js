@@ -7,15 +7,17 @@ const { verifyWebhook } = require("../middlewares/verifyWebhook");
 const logger = require('../utils/logger');
 
 // Facebook Webhook 验证
-router.get('/webhook', verifyWebhook(process.env.FACEBOOK_VERIFY_TOKEN));
+router.get('/webhook', verifyWebhook(process.env.FACEBOOK_VERIFY_TOKEN), (req, res) => {
+  res.send('Facebook Webhook verified');
+});
 
 // Facebook 消息处理
-router.post('/webhook', (req, res, next) => {
+router.post('/webhook', async (req, res) => {
   try {
-    facebookController.handleMessage(req, res);
+    await facebookController.handleMessage(req, res);
   } catch (error) {
     logger.error('Error handling Facebook message:', error.message);
-    res.status(500).send('Error handling message');
+    res.status(500).send('Error handling Facebook message');
   }
 });
 

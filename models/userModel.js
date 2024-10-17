@@ -3,6 +3,8 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
+const saltRounds = process.env.SALT_ROUNDS || 10;
+
 const userSchema = new mongoose.Schema(
   {
     name: {
@@ -28,7 +30,6 @@ const userSchema = new mongoose.Schema(
       enum: ['user', 'admin'],
       default: 'user',
     },
-    // 可选字段：账户激活状态、重置密码令牌等
     isActive: {
       type: Boolean,
       default: true,
@@ -42,7 +43,7 @@ const userSchema = new mongoose.Schema(
 // 密码加密方法
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
-  this.password = await bcrypt.hash(this.password, 10);  // 使用 bcrypt 加密
+  this.password = await bcrypt.hash(this.password, saltRounds);  // 使用 bcrypt 加密
   next();
 });
 
@@ -50,5 +51,8 @@ userSchema.pre('save', async function (next) {
 userSchema.methods.comparePassword = async function (candidatePassword) {
   return await bcrypt.compare(candidatePassword, this.password);
 };
+
+// 确保索引
+userSchema.index({ email: 1 });
 
 module.exports = mongoose.model('User', userSchema);

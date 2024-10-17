@@ -18,13 +18,8 @@ router.use('/whatsapp', whatsappWebhookRoutes);  // WhatsApp Webhook
 
 // 默认路由
 router.get('/', (req, res) => {
+  logger.info('Root API accessed');
   res.status(200).send('Welcome to Cosmic Echo API');
-});
-
-// 全局错误处理
-router.use((err, req, res, next) => {
-  logger.error('API Error:', err.message);
-  res.status(err.status || 500).json({ error: err.message });
 });
 
 module.exports = router;

@@ -13,17 +13,15 @@ const rateLimit = require('express-rate-limit');
 const logger = require('./utils/logger');
 const errorHandler = require('./utils/errorHandler');
 const apiRoutes = require('./routes/api');
+const csrfProtection = new csrf();
 
 const app = express();
 
-// 初始化 csrf tokens
-const tokens = new csrf();
-
 // 安全性中间件
-app.use(helmet());
-app.use(compression());
-app.use(cors());
-app.use(cookieParser());
+app.use(helmet()); // 提供基本的安全保护（包括HTTP头的保护）
+app.use(compression()); // 启用Gzip压缩，提升性能
+app.use(cors({ origin: process.env.CORS_ORIGIN || '*' })); // 跨域设置，可通过环境变量控制允许的域
+app.use(cookieParser()); // 解析Cookie
 
 // 请求体解析
 app.use(bodyParser.json({ limit: '1mb' }));
@@ -37,47 +35,45 @@ app.use((req, res, next) => {
   next();
 });
 
-// CSRF 中间件
+// CSRF 中间件（保护API不受跨站点请求伪造攻击）
 app.use((req, res, next) => {
-  // 排除不需要 CSRF 保护的路由（如 Webhook）
   const excludedRoutes = ['/api/facebook', '/api/personalization', '/api/whatsapp'];
+
   if (excludedRoutes.some(route => req.path.startsWith(route))) {
     return next();
   }
 
-  if (req.method === 'GET' || req.method === 'HEAD' || req.method === 'OPTIONS') {
-    const secret = tokens.secretSync();
-    res.cookie('csrfSecret', secret, { httpOnly: true });
-    res.locals.csrfToken = tokens.create(secret);
+  if (['GET', 'HEAD', 'OPTIONS'].includes(req.method)) {
+    const secret = csrfProtection.secretSync();
+    res.cookie('csrfSecret', secret, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
+    res.locals.csrfToken = csrfProtection.create(secret);
     return next();
   }
 
   const secret = req.cookies.csrfSecret;
   const token = req.body._csrf || req.headers['x-csrf-token'];
 
-  if (secret && token && tokens.verify(secret, token)) {
+  if (secret && token && csrfProtection.verify(secret, token)) {
     return next();
   }
 
-  return res.status(403).send('Invalid CSRF token');
+  return res.status(403).json({ message: 'Invalid CSRF token' });
 });
 
-// 速率限制，防止暴力攻击
+// 速率限制器（防止暴力攻击和滥用请求）
 const limiter = rateLimit({
-  windowMs: 10 * 60 * 1000,
-  max: 100,
-  message: 'Too many requests, please try again later.'
+  windowMs: 10 * 60 * 1000, // 10分钟
+  max: 100, // 每IP最多100个请求
+  message: 'Too many requests, please try again later.',
+  headers: true,
 });
 app.use(limiter);
 
 // MongoDB 连接
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-  .then(() => logger.info('MongoDB connected'))
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => logger.info('MongoDB connected successfully'))
   .catch(err => {
-    logger.error('MongoDB connection failed:', err);
+    logger.error('MongoDB connection error:', err.message);
     process.exit(1);
   });
 
@@ -88,7 +84,7 @@ app.use('/api', apiRoutes);
 errorHandler.catchUnhandledRejection();
 errorHandler.catchUncaughtException();
 
-// 全局错误处理
+// 全局错误处理（所有未捕获的错误会在这里处理）
 app.use(errorHandler.handleError);
 
 // 启动服务器

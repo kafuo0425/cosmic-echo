@@ -6,9 +6,9 @@ const personalizationController = require("../controllers/personalizationControl
 const logger = require('../utils/logger');
 
 // 处理个性化 Webhook 请求
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   try {
-    personalizationController.getPersonalizedMessage(req, res);
+    await personalizationController.getPersonalizedMessage(req, res);
   } catch (error) {
     logger.error('Error handling personalization request:', error.message);
     res.status(500).send('Error handling personalization request');

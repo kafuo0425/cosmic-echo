@@ -14,7 +14,6 @@ const userPreferencesSchema = new mongoose.Schema(
       language: { type: String, default: 'zh' },  // 默认语言为中文
       theme: { type: String, default: 'light' },  // 界面主题
       notification: { type: Boolean, default: true },  // 是否启用通知
-      // 可扩展的其他用户偏好
     },
     emotionHistory: [
       {
@@ -34,7 +33,9 @@ const userPreferencesSchema = new mongoose.Schema(
 
 // 自动更新 lastInteraction 的方法
 userPreferencesSchema.methods.updateLastInteraction = function () {
-  this.lastInteraction = Date.now();
+  if (!this.isModified('lastInteraction')) {
+    this.lastInteraction = Date.now();
+  }
   return this.save();
 };
 
