@@ -1,153 +1,127 @@
 # 🌌 宇宙回声 Cosmic Echo
 
-**宇宙回声 Cosmic Echo** 是 **高维空间 High-Dimensional Space** 工作室开发的基于 **Node.js** 和 **Express** 的 Web 应用，旨在通过智能聊天机器人为客户提供即时的情感和心灵指导支持。此项目集成了多个第三方服务，如 **Facebook** 和 **WhatsApp Webhook**，并支持多语言和安全机制。
+宇宙回声是一款智能聊天机器人，旨在帮助高维空间（High-Dimensional Space）身心灵工作室的客服人员，快速、高效地满足多样化的客户需求。
 
-## 📋 目录
-- [功能概述](#功能概述)
-- [技术栈](#技术栈)
-- [安装与运行](#安装与运行)
-- [脚本命令](#脚本命令)
-- [依赖项](#依赖项)
-- [开发与测试](#开发与测试)
-- [项目结构](#项目结构)
-- [贡献指南](#贡献指南)
-- [许可证](#许可证)
+无论是预约处理、课程报名，还是多语言沟通和情绪分析，宇宙回声都提供贴心、友好的支持，确保每位客户的需求都能得到及时回应。
 
-## 🌟 功能概述
-- **多平台消息集成**：支持 **Facebook** 和 **WhatsApp Webhook**，自动处理消息与交互。
-- **多语言支持**：通过 **i18next** 实现，满足不同客户的需求。
-- **情感分析**：提供客户情感分析，为用户提供个性化建议。
-- **用户预约管理**：自动化处理预约。
-- **高效安全**：通过 **Helmet**、**CSRF**、**express-rate-limit** 提供安全保护。
-- **日志记录**：集成 **Winston**，支持灵活日志管理。
+---
 
-## 🛠️ 技术栈
-- **Node.js**：JavaScript 运行时环境
-- **Express.js**：Web 框架
-- **Mongoose**：与 MongoDB 交互的 ORM
-- **i18next**：多语言支持库
-- **Winston**：日志管理工具
-- **Jest**：单元测试框架
-- **Husky**：Git 钩子管理工具
+## ✨ 功能特点
 
-## 🚀 安装与运行
-### 环境要求
-- **Node.js**：版本 >= 18 且 < 25
-- **npm**：版本 >= 6
-- **MongoDB** 数据库
+- 🌍 **多语言支持**：支持中文、英文和马来语，并能自动检测用户语言。
+- 👥 **用户识别与分类**：区分新用户、已有预约的用户和对服务感兴趣的用户。
+- 🛠️ **服务类别识别**：识别用户咨询的服务类型，如身心灵服务或宠物行为分析。
+- 🔍 **信息需求识别**：判断用户询问的是服务内容还是课程安排。
+- 💬 **情绪理解与反馈**：识别用户情绪，并给出适当的回应。
+- 💲 **价格询问处理**：回答用户关于价格和费用的提问。
+- 🤝 **转接真人客服**：在需要时无缝转接到真人客服。
+- ⚡ **高可用性**：确保聊天机器人持续运行，并能从中断中恢复。
 
-### 安装步骤
-1. **克隆项目**：
+---
+
+## 🛠️ 技术架构
+
+- **后端**：Node.js, Express.js
+- **数据库**：MongoDB (使用 Mongoose)
+- **自然语言处理**：Google Cloud Translate API，情绪分析
+- **认证**：JSON Web Tokens (JWT)
+- **日志记录**：Winston
+- **测试**：Jest
+- **部署**：Heroku，使用 GitHub Actions 实现 CI/CD
+- **版本控制**：GitHub
+- **Webhooks**：Facebook Messenger, WhatsApp Business
+- **预约系统**：Setmore
+
+---
+
+## 🚀 安装步骤
+
+1. **克隆项目**
+
    ```bash
    git clone https://github.com/yourusername/cosmic-echo.git
    cd cosmic-echo
    ```
-2. **安装依赖**：
+
+2. **安装依赖**
+
    ```bash
    npm install
    ```
-3. **配置环境变量**：复制 `.env.example` 为 `.env`，并填入必要变量。
-4. **启动应用**：
+
+3. **配置环境变量**
+
+   - 在项目根目录创建 `.env` 文件，添加以下内容：
+     ```
+     PORT=9587
+     MONGODB_URI=your_mongodb_connection_string
+     GOOGLE_TRANSLATE_API_KEY=your_google_translate_api_key
+     FACEBOOK_VERIFY_TOKEN=your_facebook_verify_token
+     FACEBOOK_PAGE_ACCESS_TOKEN=your_facebook_page_access_token
+     WHATSAPP_VERIFY_TOKEN=your_whatsapp_verify_token
+     WHATSAPP_API_URL=your_whatsapp_api_url
+     WHATSAPP_API_TOKEN=your_whatsapp_api_token
+     ```
+
+4. **运行应用**
+
    - 开发模式：
      ```bash
-     npm run start:dev
+     npm run dev
      ```
    - 生产模式：
      ```bash
      npm start
      ```
-5. **访问应用**：打开 `http://localhost:9587`
 
-## 📜 脚本命令
-- **启动**：`npm start`（生产）、`npm run start:dev`（开发）
-- **代码检查**：`npm run lint`，自动修复：`npm run lint:fix`
-- **测试**：`npm test` 运行单元测试
-- **安全检查**：`npm run check:security`
-- **Git 钩子**：`precommit` 运行代码检查，`prepush` 运行测试
-
-## 📦 依赖项
-### 核心依赖
-- **express**：Web 框架
-- **mongoose**：MongoDB 交互
-- **axios**：HTTP 请求工具
-- **helmet**：增强安全性
-- **i18next**：多语言支持
-- **winston**：日志管理
-
-### 开发依赖
-- **jest**：测试框架
-- **eslint**：代码规范检查
-- **husky**：Git 钩子管理
-- **nodemon**：开发模式自动重载
-- **supertest**：HTTP 接口测试
-
-## 🔧 开发与测试
-1. **运行测试**：
+5. **运行测试**
    ```bash
    npm test
    ```
-2. **代码检查**：
+
+---
+
+## 🌍 部署指南
+
+应用已部署在 Heroku 上，以下是本地部署步骤：
+
+1. **登录 Heroku**
+
    ```bash
-   npm run lint
-   ```
-3. **自动修复**：
-   ```bash
-   npm run lint:fix
-   ```
-4. **安全检查**：
-   ```bash
-   npm run check:security
+   heroku login
    ```
 
-## 📂 项目结构
-```
-C:.
-|   app.js                   # 应用入口
-|   package.json             # 项目依赖和脚本定义
-|   .env                     # 环境变量配置
-|   README.md                # 项目说明
-|
-+---config                   # 配置文件
-+---middlewares              # 中间件
-+---routes                   # 路由
-+---controllers              # 控制器
-+---services                 # 业务逻辑
-+---models                   # 数据模型
-+---utils                    # 工具函数
-+---locales                  # 多语言支持
-+---logs                     # 日志文件
-+---coverage                 # 测试覆盖率报告
-```
-### 主要文件和目录
-- **`app.js`**：应用入口，初始化服务器和路由
-- **`config/`**：环境配置文件
-- **`middlewares/`**：处理请求前的逻辑
-- **`routes/`**：路由定义
-- **`controllers/`**：处理 HTTP 请求
-- **`services/`**：业务逻辑实现
-- **`models/`**：数据模型定义
-- **`locales/`**：多语言支持
-- **`logs/`**：日志管理
+2. **创建 Heroku 应用**
+
+   ```bash
+   heroku create your-app-name
+   ```
+
+3. **设置 Heroku 环境变量**
+
+   ```bash
+   heroku config:set MONGODB_URI=your_mongodb_connection_string
+   heroku config:set GOOGLE_TRANSLATE_API_KEY=your_google_translate_api_key
+   heroku config:set FACEBOOK_VERIFY_TOKEN=your_facebook_verify_token
+   heroku config:set FACEBOOK_PAGE_ACCESS_TOKEN=your_facebook_page_access_token
+   heroku config:set WHATSAPP_VERIFY_TOKEN=your_whatsapp_verify_token
+   heroku config:set WHATSAPP_API_URL=your_whatsapp_api_url
+   heroku config:set WHATSAPP_API_TOKEN=your_whatsapp_api_token
+   ```
+
+4. **推送代码到 Heroku**
+   ```bash
+   git push heroku main
+   ```
+
+---
 
 ## 🤝 贡献指南
-欢迎贡献！步骤如下：
-1. **Fork 项目**：在 GitHub 上 fork 并克隆到本地。
-   ```bash
-   git clone https://github.com/yourusername/cosmic-echo.git
-   ```
-2. **创建分支**：
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. **提交代码**：
-   ```bash
-   git commit -m "Add new feature"
-   ```
-4. **推送分支**：
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-5. **提交 Pull Request**：在 GitHub 上提交 PR。
 
-## 📜 许可证
-该项目采用 [MIT 许可证](./LICENSE)，欢迎自由使用与贡献。
+欢迎任何形式的贡献！请提交问题或创建拉取请求以改进项目或修复错误。
+
+---
+
+## 📄 许可证
+
+本项目采用 MIT 许可证。

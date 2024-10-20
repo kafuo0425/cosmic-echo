@@ -1,80 +1,71 @@
-module.exports = [
-  {
-    // 全局忽略模式
-    ignores: [
-      'coverage/',
-      'coverage/lcov-report/',
-      'dist/',
-      'build/',
-      'public/',
-      '.env',
-      'webhook-server/.env',
-      'node_modules/',
-      'webhook-server/node_modules/',
-      'logs/',
-      '*.log',
-      'npm-debug.log*',
-      'yarn-debug.log*',
-      'yarn-error.log*',
-      '*.tmp',
-      '*.temp',
-      'tmp/',
-      'temp/',
-      '.DS_Store',
-      'Thumbs.db',
-      'ehthumbs.db',
-      'Desktop.ini',
-      '*nfs*',
-      '.vscode/',
-      '.idea/',
-      '*.suo',
-      '*.ntvs*',
-      '*.njsproj',
-      '*.sln',
-      '.eslintcache',
-      '*.tsbuildinfo',
-    ],
+/** @type {import('eslint').Linter.Config} */
+module.exports = {
+  env: {
+    node: true, // Node.js 环境
+    jest: true, // Jest 测试环境
   },
-  {
-    // 针对 JavaScript 和 JSX 文件
-    files: ['*.js', '*.jsx'],
-    languageOptions: {
-      ecmaVersion: 2021, // 使用 ECMAScript 2021 版本
-      sourceType: 'script', // 使用 CommonJS 模块系统
-      globals: {  // 全局变量
-        process: 'readonly',
-        __dirname: 'readonly',
-        module: 'readonly',
-        require: 'readonly',
+  extends: [
+    'eslint:recommended', // 使用推荐的 ESLint 规则
+    'plugin:node/recommended', // 使用 Node.js 插件的推荐规则
+    'plugin:import/errors', // 添加 import 错误处理
+    'plugin:import/warnings', // 添加 import 警告
+    'plugin:prettier/recommended', // 集成 Prettier
+    'plugin:security/recommended', // 添加安全插件的推荐规则
+  ],
+  parserOptions: {
+    ecmaVersion: 2021, // 使用 ECMAScript 2021
+    sourceType: 'commonjs', // CommonJS 模块
+  },
+  globals: {
+    require: 'readonly',
+    process: 'readonly',
+    module: 'readonly',
+    __dirname: 'readonly',
+    jest: 'readonly',
+  },
+  plugins: [
+    'prettier', // Prettier 插件
+    'node', // Node.js 插件
+    'security', // 安全插件
+    'import', // import 插件
+  ],
+  rules: {
+    'prettier/prettier': ['error'], // 确保代码符合 Prettier 规则
+    'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }], // 忽略以下划线开头的参数
+    'no-console': 'warn', // 在代码中使用 console 时发出警告
+    'security/detect-object-injection': 'error', // 检测对象注入
+    'security/detect-non-literal-fs-filename': 'error', // 检测文件系统操作中的非字面量文件名
+    'security/detect-non-literal-require': 'error', // 检测 require 中的非字面量路径
+    eqeqeq: ['error', 'always'], // 强制使用全等
+    curly: ['error', 'all'], // 强制在所有控制语句中使用大括号
+    'no-var': 'error', // 禁止使用 var
+    'prefer-const': 'error', // 强制使用 const
+    'consistent-return': 'error', // 强制每个函数都有一致的返回
+    'no-magic-numbers': ['warn', { ignore: [0, 1] }], // 防止魔法数字的使用
+    complexity: ['warn', { max: 10 }], // 限制函数复杂度
+    'node/no-unsupported-features/es-syntax': 'error', // 禁用不支持的 ES 特性
+    indent: ['error', 2], // 统一缩进为 2 个空格
+    quotes: ['error', 'single'], // 统一使用单引号
+    semi: ['error', 'always'], // 统一使用分号
+    'no-duplicate-imports': 'error', // 禁止重复导入
+    'prefer-template': 'error', // 强制使用模板字符串而不是字符串连接
+    'object-shorthand': ['error', 'always'], // 强制使用对象简写
+  },
+  overrides: [
+    {
+      files: ['*.test.js'], // 针对测试文件的特殊规则
+      rules: {
+        'no-console': 'off', // 测试文件允许使用 console
+        'jest/no-disabled-tests': 'warn', // 警告禁用的测试
+        'jest/no-focused-tests': 'error', // 禁止集中测试
+        'jest/consistent-test-it': ['error', { fn: 'it', withinDescribe: 'it' }], // 测试一致性
       },
     },
-    plugins: {
-      react: { // React 插件
-        settings: {
-          version: 'detect',  // 自动检测 React 版本
-        },
+    {
+      files: ['*.js'], // 适用于所有 JavaScript 文件
+      rules: {
+        'import/no-extraneous-dependencies': ['error', { devDependencies: true }], // 允许在开发依赖中使用 import
       },
     },
-    rules: {
-      'no-unused-vars': 'warn',  // 警告未使用的变量
-      'react/prop-types': 'off', // 关闭 prop-types 检查
-    },
-  },
-  {
-    // 针对 TypeScript 文件的配置
-    files: ['*.ts', '*.tsx'],
-    languageOptions: {
-      parser: '@typescript-eslint/parser',  // 使用 TypeScript 解析器
-      ecmaVersion: 2021,
-      sourceType: 'module',  // TypeScript 文件可以继续使用 ES 模块
-    },
-    plugins: {
-      '@typescript-eslint': {},  // 启用 TypeScript 插件
-    },
-    rules: {
-      '@typescript-eslint/no-unused-vars': ['warn'],  // 警告未使用的变量
-      '@typescript-eslint/no-explicit-any': 'off',  // 允许使用 `any` 类型
-      '@typescript-eslint/explicit-function-return-type': 'off',  // 不强制要求函数返回类型
-    },
-  },
-];
+  ],
+};

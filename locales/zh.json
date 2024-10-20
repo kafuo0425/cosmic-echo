@@ -5,28 +5,28 @@
       "message": "{{customerName}}，您好！\n\n欢迎来到 **高维空间 High-Dimensional Space**！我是 **宇宙回声 Cosmic Echo**，您的智能小助手。\n\n高维空间由资深动物情感与行为分析师 **卡芙欧（KAFUO）** 创立，致力于通过洞察动物情感与行为，帮助人们找到内在的平静与力量。\n\n我们可以为您提供以下支持：\n- 安排预约与管理服务\n- 解答心灵成长与身心灵相关问题\n\n请告诉我您的需求，我们将共同探索！\n\n祝好，\n高维空间 High-Dimensional Space"
     }
   },
-  
+
   "language_notice": "{{customerName}}，您好！\n\n为了方便与您沟通，我们提供中文、马来语和英语三种语言的交流服务。但请注意，所有课程和服务最终将以中文授课和提供，感谢您的理解与配合！",
-  
+
   "course_notice": "{{customerName}}，您好！\n\n您可以使用中文、马来语或英语与我们沟通并完成报名。但为了确保您能够顺利参与课程，我们提醒您本课程将全程使用中文授课。请确保您能够听或读写中文，以便获得最佳学习体验。谢谢您的支持与理解！",
-  
+
   "service_notice": "{{customerName}}，您好！\n\n我们的个性化服务支持使用中文、马来语或英语与您沟通，以确保交流顺畅。然而，请注意，服务的实际提供过程将主要以中文进行。我们希望您在中文交流中获得最好的服务体验，感谢您的配合与理解！",
-  
+
   "general_inquiry": {
     "subject": "一般咨询与预约",
     "message": "{{customerName}}，您好！\n\n感谢您联系 **高维空间 High-Dimensional Space**。我们非常愿意为您提供帮助。如果您有任何问题或需求，欢迎随时告知我们！\n\n我们可以为您提供的服务包括：\n- 宠物情感与行为分析\n- 身心灵探索与能量解读\n- 课程报名与学习计划\n\n期待您的回复，我们会竭诚为您服务！\n\n祝好，\n高维空间 High-Dimensional Space"
   },
-  
+
   "pricing": {
     "subject": "价格与服务详情",
     "message": "{{customerName}}，您好！\n\n感谢您的询问。以下是 **{{serviceName}}** 的价格详情：\n\n**马来西亚地区**\n- 30分钟咨询：RM 188.00\n- 60分钟咨询：RM 258.00\n- 90分钟咨询：RM 328.00\n\n**台湾地区**\n- 30分钟咨询：NTD 1,500.00\n- 60分钟咨询：NTD 2,000.00\n- 90分钟咨询：NTD 2,500.00\n\n**其他地区**\n- 30分钟咨询：USD 55.00\n- 60分钟咨询：USD 75.00\n- 90分钟咨询：USD 95.00\n\n请通过以下链接预约：[预约链接]。如需更多帮助，请随时联系我。\n\n祝好，\n高维空间 High-Dimensional Space"
   },
-  
+
   "course_registration": {
     "subject": "课程报名与咨询",
     "message": "{{customerName}}，您好！\n\n感谢您对我们 **高维空间 High-Dimensional Space** 的课程感兴趣！我们的 **{{courseName}}** 专为 **{{targetAudience}}** 设计，帮助您深入探索 **{{courseObjective}}**。\n\n课程将于 **{{date}}** 通过线上进行，时间为 **{{time}}**。请点击以下链接了解更多信息并报名：[报名链接]。\n\n如有任何问题，请随时联系我们。期待在课程中与您一起探索心灵奥秘！\n\n祝好，\n高维空间 High-Dimensional Space"
   },
-  
+
   "support": {
     "emotional": {
       "subject": "情感支持",
@@ -41,7 +41,7 @@
       "message": "{{customerName}}，您好！\n\n感谢您的耐心等待。我们已经将您的请求转接至我们的真人客服，他们将尽快与您联系。\n\n感谢您的理解与配合，祝您顺利获得所需的帮助！\n\n祝好，\n高维空间 High-Dimensional Space"
     }
   },
-  
+
   "technical_support": {
     "technical_issue": {
       "subject": "技术问题或预约系统故障",
@@ -52,7 +52,7 @@
       "message": "{{customerName}}，您好！\n\n抱歉，我未能理解您的请求。为了更好地帮助您，请尝试以下方式：\n1. 简化您的问题或需求。\n2. 提供更多详细的描述。\n\n如问题仍然存在，请通过以下方式联系我们的真人客服：[联系方式]。他们将为您提供进一步的支持。\n\n感谢您的理解与配合。\n\n祝好，\n高维空间 High-Dimensional Space"
     }
   },
-  
+
   "followup": {
     "post_service": {
       "subject": "服务后的跟进",

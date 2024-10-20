@@ -1,115 +1,193 @@
 {
-    "pet_emotion_consultation": {
-        "name": "宠物情感与行为分析咨询",
-        "description": "为宠物和宠物主人提供情感和行为支持，帮助它们建立更深的情感连接，促进身心健康。",
-        "services": [
-            { "name": "亲密连接", "description": "帮助您与宠物建立深刻的情感纽带，共享亲密时刻。" },
-            { "name": "和谐成长", "description": "理解宠物行为背后的原因，提供必要的支持，促进宠物与主人的共同成长。" },
-            { "name": "情感呵护", "description": "关注宠物的情感状态，提供温暖的关怀，确保它们感受到爱。" },
-            { "name": "无忧搬迁", "description": "帮助宠物平稳过渡到新环境，减轻不安情绪。" },
-            { "name": "新生儿适应", "description": "协助宠物适应家庭中新成员的到来，建立和谐关系。" },
-            { "name": "新旧宠融合", "description": "帮助新旧宠物和谐相处，减轻适应期的紧张感。" },
-            { "name": "身心关怀", "description": "关注宠物的身心健康，提升其生活质量。" },
-            { "name": "暖心告别", "description": "在宠物临终时，提供温馨的告别仪式，确保它们感到安宁。" },
-            { "name": "珍爱回忆", "description": "帮助主人与往生宠物道别，珍藏美好回忆。" }
-        ],
-        "pricing": {
-            "30_min": { "my": 188, "tw": 1500, "intl": 55 },
-            "60_min": { "my": 258, "tw": 2000, "intl": 75 },
-            "90_min": { "my": 328, "tw": 2500, "intl": 95 }
-        },
-        "booking_policy": {
-            "advance_booking": "请至少提前1天预约，最多可选择未来3个月的时间。",
-            "rescheduling": "如需变更或取消，请至少提前1小时通知。",
-            "refund_policy": "付款后恕不退款，感谢您的理解。"
-        },
-        "additional_fees": {
-            "overtime": { "my": 64.5, "tw": 500, "intl": 18.75 },
-            "emergency": { "fee": 45, "description": "紧急预约需额外收费 RM45。" }
-        },
-        "booking_link": "https://highdimensionalspace.setmore.com/"
+  "pet_emotion_consultation": {
+    "name": "宠物情感与行为分析咨询",
+    "description": "为宠物和宠物主人提供情感和行为支持，帮助它们建立更深的情感连接，促进身心健康。",
+    "services": [
+      {
+        "name": "亲密连接",
+        "description": "帮助您与宠物建立深刻的情感纽带，共享亲密时刻。"
+      },
+      {
+        "name": "和谐成长",
+        "description": "理解宠物行为背后的原因，提供必要的支持，促进宠物与主人的共同成长。"
+      },
+      {
+        "name": "情感呵护",
+        "description": "关注宠物的情感状态，提供温暖的关怀，确保它们感受到爱。"
+      },
+      {
+        "name": "无忧搬迁",
+        "description": "帮助宠物平稳过渡到新环境，减轻不安情绪。"
+      },
+      {
+        "name": "新生儿适应",
+        "description": "协助宠物适应家庭中新成员的到来，建立和谐关系。"
+      },
+      {
+        "name": "新旧宠融合",
+        "description": "帮助新旧宠物和谐相处，减轻适应期的紧张感。"
+      },
+      {
+        "name": "身心关怀",
+        "description": "关注宠物的身心健康，提升其生活质量。"
+      },
+      {
+        "name": "暖心告别",
+        "description": "在宠物临终时，提供温馨的告别仪式，确保它们感到安宁。"
+      },
+      {
+        "name": "珍爱回忆",
+        "description": "帮助主人与往生宠物道别，珍藏美好回忆。"
+      }
+    ],
+    "pricing": {
+      "30_min": { "my": 188, "tw": 1500, "intl": 55 },
+      "60_min": { "my": 258, "tw": 2000, "intl": 75 },
+      "90_min": { "my": 328, "tw": 2500, "intl": 95 }
     },
-    "animal_emotion_consultation": {
-        "name": "动物情感与行为分析咨询",
-        "description": "为野生动物提供情感支持，促进人与自然的深度连接。",
-        "services": [
-            { "name": "自然共鸣", "description": "帮助与野生动物建立共鸣，探索自然奥秘。" },
-            { "name": "生态平衡", "description": "提供关于生态系统平衡的建议，保持环境和谐。" },
-            { "name": "情感传递", "description": "理解野生动物的情感需求，促进共情和尊重。" },
-            { "name": "保护行动", "description": "参与濒危物种保护行动，支持物种的生存与繁衍。" },
-            { "name": "海洋之心", "description": "保护海洋生物及其生态环境，维护海洋的生命之源。" },
-            { "name": "空中之旅", "description": "保护空中生物如鸟类，促进它们的繁荣。" },
-            { "name": "昆虫奇观", "description": "关注传粉昆虫如蜜蜂的生态重要性，确保生态多样性。" },
-            { "name": "珍稀生命", "description": "支持珍稀野生动物的保护行动，确保其生存与繁衍。" },
-            { "name": "全球关注", "description": "参与全球环境保护运动，致力于地球的可持续发展。" }
-        ],
-        "pricing": {
-            "30_min": { "my": 188, "tw": 1500, "intl": 55 },
-            "60_min": { "my": 258, "tw": 2000, "intl": 75 },
-            "90_min": { "my": 328, "tw": 2500, "intl": 95 }
-        },
-        "booking_policy": {
-            "advance_booking": "请至少提前1天预约，最多可选择未来3个月的时间。",
-            "rescheduling": "如需变更或取消，请至少提前1小时通知。",
-            "refund_policy": "付款后恕不退款，感谢您的理解。"
-        },
-        "additional_fees": {
-            "overtime": { "my": 64.5, "tw": 500, "intl": 18.75 },
-            "emergency": { "fee": 45, "description": "紧急预约需额外收费 RM45。" }
-        },
-        "booking_link": "https://highdimensionalspace.setmore.com/"
+    "booking_policy": {
+      "advance_booking": "请至少提前1天预约，最多可选择未来3个月的时间。",
+      "rescheduling": "如需变更或取消，请至少提前1小时通知。",
+      "refund_policy": "付款后恕不退款，感谢您的理解。"
     },
-    "energy_reading": {
-        "name": "能量解读",
-        "description": "通过各种能量解读，帮助调和个人能量场，提升内在平衡。",
-        "services": [
-            { "name": "水晶、矿石", "description": "使用水晶和矿石来解读与调和能量。" },
-            { "name": "植物", "description": "通过植物的能量，帮助客户连接自然与调节能量。" },
-            { "name": "声音", "description": "通过声音频率来调节情感与内在能量。" },
-            { "name": "色彩", "description": "使用色彩疗法来平衡身心的能量场。" },
-            { "name": "图腾与符号", "description": "通过古老图腾和符号解读个人的灵性状态。" },
-            { "name": "数字", "description": "通过数字能量分析客户的灵性路径与方向。" },
-            { "name": "梦境", "description": "通过解析梦境符号，帮助理解潜意识中的信息。" }
-        ],
-        "pricing": {
-            "30_min": { "my": 188, "tw": 1500, "intl": 55 },
-            "60_min": { "my": 258, "tw": 2000, "intl": 75 },
-            "90_min": { "my": 328, "tw": 2500, "intl": 95 }
-        },
-        "booking_policy": {
-            "advance_booking": "请至少提前1天预约，最多可选择未来3个月的时间。",
-            "rescheduling": "如需变更或取消，请至少提前1小时通知。",
-            "refund_policy": "付款后恕不退款，感谢您的理解。"
-        },
-        "additional_fees": {
-            "overtime": { "my": 64.5, "tw": 500, "intl": 18.75 },
-            "emergency": { "fee": 45, "description": "紧急预约需额外收费 RM45。" }
-        },
-        "booking_link": "https://highdimensionalspace.setmore.com/"
+    "additional_fees": {
+      "overtime": { "my": 64.5, "tw": 500, "intl": 18.75 },
+      "emergency": { "fee": 45, "description": "紧急预约需额外收费 RM45。" }
     },
-    "card_reading": {
-        "name": "牌卡咨询",
-        "description": "通过多种卡牌占卜方法提供灵性指导，帮助解决问题并指引人生方向。",
-        "services": [
-            { "name": "塔罗", "description": "使用塔罗牌解答客户问题，提供灵性指引。" },
-            { "name": "OH卡", "description": "通过OH卡洞察潜意识，解决情感问题。" },
-            { "name": "神愈卡", "description": "利用神圣愈疗卡片提供心灵上的支持和指引。" },
-            { "name": "多元占卜", "description": "结合多种占卜工具，提供多元化的灵性解读与指导。" }
-        ],
-        "pricing": {
-            "30_min": { "my": 188, "tw": 1500, "intl": 55 },
-            "60_min": { "my": 258, "tw": 2000, "intl": 75 },
-            "90_min": { "my": 328, "tw": 2500, "intl": 95 }
-        },
-        "booking_policy": {
-            "advance_booking": "请至少提前1天预约，最多可选择未来3个月的时间。",
-            "rescheduling": "如需变更或取消，请至少提前1小时通知。",
-            "refund_policy": "付款后恕不退款，感谢您的理解。"
-        },
-        "additional_fees": {
-            "overtime": { "my": 64.5, "tw": 500, "intl": 18.75 },
-            "emergency": { "fee": 45, "description": "紧急预约需额外收费 RM45。" }
-        },
-        "booking_link": "https://highdimensionalspace.setmore.com/"
-    }
+    "booking_link": "https://highdimensionalspace.setmore.com/"
+  },
+  "animal_emotion_consultation": {
+    "name": "动物情感与行为分析咨询",
+    "description": "为野生动物提供情感支持，促进人与自然的深度连接。",
+    "services": [
+      {
+        "name": "自然共鸣",
+        "description": "帮助与野生动物建立共鸣，探索自然奥秘。"
+      },
+      {
+        "name": "生态平衡",
+        "description": "提供关于生态系统平衡的建议，保持环境和谐。"
+      },
+      {
+        "name": "情感传递",
+        "description": "理解野生动物的情感需求，促进共情和尊重。"
+      },
+      {
+        "name": "保护行动",
+        "description": "参与濒危物种保护行动，支持物种的生存与繁衍。"
+      },
+      {
+        "name": "海洋之心",
+        "description": "保护海洋生物及其生态环境，维护海洋的生命之源。"
+      },
+      {
+        "name": "空中之旅",
+        "description": "保护空中生物如鸟类，促进它们的繁荣。"
+      },
+      {
+        "name": "昆虫奇观",
+        "description": "关注传粉昆虫如蜜蜂的生态重要性，确保生态多样性。"
+      },
+      {
+        "name": "珍稀生命",
+        "description": "支持珍稀野生动物的保护行动，确保其生存与繁衍。"
+      },
+      {
+        "name": "全球关注",
+        "description": "参与全球环境保护运动，致力于地球的可持续发展。"
+      }
+    ],
+    "pricing": {
+      "30_min": { "my": 188, "tw": 1500, "intl": 55 },
+      "60_min": { "my": 258, "tw": 2000, "intl": 75 },
+      "90_min": { "my": 328, "tw": 2500, "intl": 95 }
+    },
+    "booking_policy": {
+      "advance_booking": "请至少提前1天预约，最多可选择未来3个月的时间。",
+      "rescheduling": "如需变更或取消，请至少提前1小时通知。",
+      "refund_policy": "付款后恕不退款，感谢您的理解。"
+    },
+    "additional_fees": {
+      "overtime": { "my": 64.5, "tw": 500, "intl": 18.75 },
+      "emergency": { "fee": 45, "description": "紧急预约需额外收费 RM45。" }
+    },
+    "booking_link": "https://highdimensionalspace.setmore.com/"
+  },
+  "energy_reading": {
+    "name": "能量解读",
+    "description": "通过各种能量解读，帮助调和个人能量场，提升内在平衡。",
+    "services": [
+      {
+        "name": "水晶、矿石",
+        "description": "使用水晶和矿石来解读与调和能量。"
+      },
+      {
+        "name": "植物",
+        "description": "通过植物的能量，帮助客户连接自然与调节能量。"
+      },
+      { "name": "声音", "description": "通过声音频率来调节情感与内在能量。" },
+      { "name": "色彩", "description": "使用色彩疗法来平衡身心的能量场。" },
+      {
+        "name": "图腾与符号",
+        "description": "通过古老图腾和符号解读个人的灵性状态。"
+      },
+      {
+        "name": "数字",
+        "description": "通过数字能量分析客户的灵性路径与方向。"
+      },
+      {
+        "name": "梦境",
+        "description": "通过解析梦境符号，帮助理解潜意识中的信息。"
+      }
+    ],
+    "pricing": {
+      "30_min": { "my": 188, "tw": 1500, "intl": 55 },
+      "60_min": { "my": 258, "tw": 2000, "intl": 75 },
+      "90_min": { "my": 328, "tw": 2500, "intl": 95 }
+    },
+    "booking_policy": {
+      "advance_booking": "请至少提前1天预约，最多可选择未来3个月的时间。",
+      "rescheduling": "如需变更或取消，请至少提前1小时通知。",
+      "refund_policy": "付款后恕不退款，感谢您的理解。"
+    },
+    "additional_fees": {
+      "overtime": { "my": 64.5, "tw": 500, "intl": 18.75 },
+      "emergency": { "fee": 45, "description": "紧急预约需额外收费 RM45。" }
+    },
+    "booking_link": "https://highdimensionalspace.setmore.com/"
+  },
+  "card_reading": {
+    "name": "牌卡咨询",
+    "description": "通过多种卡牌占卜方法提供灵性指导，帮助解决问题并指引人生方向。",
+    "services": [
+      {
+        "name": "塔罗",
+        "description": "使用塔罗牌解答客户问题，提供灵性指引。"
+      },
+      { "name": "OH卡", "description": "通过OH卡洞察潜意识，解决情感问题。" },
+      {
+        "name": "神愈卡",
+        "description": "利用神圣愈疗卡片提供心灵上的支持和指引。"
+      },
+      {
+        "name": "多元占卜",
+        "description": "结合多种占卜工具，提供多元化的灵性解读与指导。"
+      }
+    ],
+    "pricing": {
+      "30_min": { "my": 188, "tw": 1500, "intl": 55 },
+      "60_min": { "my": 258, "tw": 2000, "intl": 75 },
+      "90_min": { "my": 328, "tw": 2500, "intl": 95 }
+    },
+    "booking_policy": {
+      "advance_booking": "请至少提前1天预约，最多可选择未来3个月的时间。",
+      "rescheduling": "如需变更或取消，请至少提前1小时通知。",
+      "refund_policy": "付款后恕不退款，感谢您的理解。"
+    },
+    "additional_fees": {
+      "overtime": { "my": 64.5, "tw": 500, "intl": 18.75 },
+      "emergency": { "fee": 45, "description": "紧急预约需额外收费 RM45。" }
+    },
+    "booking_link": "https://highdimensionalspace.setmore.com/"
+  }
 }

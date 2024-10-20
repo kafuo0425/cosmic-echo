@@ -1,42 +1,51 @@
+/* eslint-disable no-console */
 // models/userPreferencesModel.js
 
 const mongoose = require("mongoose");
+// const logger = require("../utils/logger").logger; // 移除未使用的 logger
 
 const userPreferencesSchema = new mongoose.Schema(
   {
     userId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'User',
+      ref: "User",
       required: true,
       index: true,
     },
     preferences: {
-      language: { type: String, default: 'zh' },  // 默认语言为中文
-      theme: { type: String, default: 'light' },  // 界面主题
-      notification: { type: Boolean, default: true },  // 是否启用通知
+      language: { type: String, default: "zh" },
+      theme: { type: String, default: "light" },
+      notification: { type: Boolean, default: true },
     },
     emotionHistory: [
       {
-        emotion: { type: String, required: true },  // 用户情感，如"开心"、"紧张"等
-        intensity: { type: Number, default: 1 },   // 情感强度，1-5 分级
-        source: { type: String, default: 'chatbot' },  // 情感来源，如"chatbot"或"manual"
+        emotion: { type: String, required: true },
+        intensity: { type: Number, default: 1 },
+        source: { type: String, default: "chatbot" },
         timestamp: { type: Date, default: Date.now },
-      }
+      },
     ],
     lastInteraction: {
       type: Date,
       default: Date.now,
-    }
+    },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 // 自动更新 lastInteraction 的方法
 userPreferencesSchema.methods.updateLastInteraction = function () {
-  if (!this.isModified('lastInteraction')) {
-    this.lastInteraction = Date.now();
-  }
+  this.lastInteraction = Date.now();
   return this.save();
 };
 
-module.exports = mongoose.model('UserPreferences', userPreferencesSchema);
+// 用户偏好关联更新方法
+userPreferencesSchema.methods.updatePreferences = function (newPreferences) {
+  this.preferences = { ...this.preferences, ...newPreferences };
+  return this.save();
+};
+
+// 确保 userId 索引存在
+userPreferencesSchema.index({ userId: 1 });
+
+module.exports = mongoose.model("UserPreferences", userPreferencesSchema);

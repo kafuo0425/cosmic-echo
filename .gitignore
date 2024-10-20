@@ -6,20 +6,27 @@ node_modules/
 
 # Package lock files
 package-lock.json
+yarn.lock  # 若使用yarn作为包管理器
 
 # Build output
 dist/
+build/  # 一些项目可能使用build作为输出目录
 
 # Logs
 logs/
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Coverage reports
 coverage/
 
 # macOS system files
 .DS_Store
+
+# Linux system files
+*.swp  # vim/vi编辑器产生的交换文件
 
 # Webhook Server (if it's a separate module)
 webhook-server/.env
@@ -29,3 +36,16 @@ webhook-server/*.log
 # IDE specific settings
 .vscode/
 .idea/
+*.sublime-workspace
+*.sublime-project
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.orig  # 可能的原始文件
+*.bak   # 备份文件
+*.swp   # vim 交换文件
+
+# Dependency directories for front-end frameworks (if applicable)
+bower_components/

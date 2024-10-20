@@ -2,20 +2,38 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x] # 兼容多个 Node.js 版本测试
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
         with:
-          node-version: '18'
-      - run: npm install
-      - run: npm run lint
-      - run: npm test
+          node-version: ${{ matrix.node-version }}
+          cache: "npm" # 启用 npm 缓存加速安装
+
+      - run: npm ci # 使用 npm ci 确保一致性
+
+      - run: npm run lint # 执行 lint 检查
+
+      - run: npm run lint -- --fix # 自动修复 lint 问题
+
+      - run: npm test # 运行测试
+
+      - name: Upload coverage report # 上传测试覆盖率报告
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage/ # 确保你的测试产生覆盖率报告
