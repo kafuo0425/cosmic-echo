@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// models/userPreferencesModel.js
-
 const mongoose = require("mongoose");
 // const logger = require("../utils/logger").logger; // 移除未使用的 logger
 

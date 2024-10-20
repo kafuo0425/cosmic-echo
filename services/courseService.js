@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// services/courseService.js
-
 const coursesConfig = require("../config/courses.json");
 
 class CourseService {

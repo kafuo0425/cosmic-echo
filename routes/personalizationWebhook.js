@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// routes/personalizationWebhook.js
-
 const express = require("express");
 const router = express.Router();
 const personalizationController = require("../controllers/personalizationController");

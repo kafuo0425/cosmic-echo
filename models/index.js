@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// models/index.js
-
 const mongoose = require("mongoose");
 const logger = require("../utils/logger").logger;
 

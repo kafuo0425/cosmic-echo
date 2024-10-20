@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// services/personalizationService.js
-
 const logger = require("../utils/logger");
 const emotionService = require("./emotionService");
 

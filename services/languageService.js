@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// services/languageService.js
-
 const i18next = require("i18next");
 const enTranslations = require("../locales/en.json");
 const zhTranslations = require("../locales/zh.json");
@@ -23,6 +20,9 @@ const initI18n = () => {
     },
   });
 };
+
+// 假设 translate 函数已经定义在其他地方
+const translate = require("../external/translate");
 
 const detectLanguageAndNotify = (message, res) => {
   const lang = detectLanguage(message);

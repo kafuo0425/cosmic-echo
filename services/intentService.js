@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// services/intentService.js
-
 const logger = require("../utils/logger");
 const compromise = require("compromise");
 const { detectLanguage } = require("./languageService");

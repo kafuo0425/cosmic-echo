@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// utils/logger.js
-
 const winston = require("winston");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");

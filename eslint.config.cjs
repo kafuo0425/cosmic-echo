@@ -1,27 +1,13 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
-  env: {
-    node: true, // Node.js 环境
-    jest: true, // Jest 测试环境
-  },
-  extends: [
-    'eslint:recommended', // 使用推荐的 ESLint 规则
-    'plugin:node/recommended', // 使用 Node.js 插件的推荐规则
-    'plugin:import/errors', // 添加 import 错误处理
-    'plugin:import/warnings', // 添加 import 警告
-    'plugin:prettier/recommended', // 集成 Prettier
-    'plugin:security/recommended', // 添加安全插件的推荐规则
-  ],
-  parserOptions: {
-    ecmaVersion: 2021, // 使用 ECMAScript 2021
-    sourceType: 'commonjs', // CommonJS 模块
-  },
-  globals: {
-    require: 'readonly',
-    process: 'readonly',
-    module: 'readonly',
-    __dirname: 'readonly',
-    jest: 'readonly',
+  languageOptions: {
+    globals: {
+      require: 'readonly',
+      process: 'readonly',
+      module: 'readonly',
+      __dirname: 'readonly',
+      jest: 'readonly',
+    },
   },
   plugins: [
     'prettier', // Prettier 插件
@@ -68,4 +54,13 @@ module.exports = {
       },
     },
   ],
+  // 将环境配置移动到这里
+  settings: {
+    'node': {
+      try: true, // 允许尝试使用不支持的 Node 特性
+    },
+    'jest': {
+      testEnvironment: 'node', // Jest 使用 Node.js 环境
+    },
+  },
 };

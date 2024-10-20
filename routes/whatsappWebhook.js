@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// routes/whatsappWebhook.js
-
 const express = require("express");
 const router = express.Router();
 const { verifyWebhook } = require("../middlewares/verifyWebhook");

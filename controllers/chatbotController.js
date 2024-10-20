@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// controllers/chatbotController.js
-
 const express = require("express");
 const router = express.Router();
 const languageService = require("../services/languageService");

@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// routes/courseRoutes.js
-
 const express = require("express");
 const router = express.Router();
 const courseController = require("../controllers/courseController");
@@ -31,9 +28,7 @@ router.get("/:id", async (req, res) => {
   try {
     await courseController.getCourseById(req, res);
   } catch (error) {
-    logger.error(
-      `Error fetching course with ID ${req.params.id}: ${error.message}`,
-    );
+    logger.error(`Error fetching course with ID ${req.params.id}: ${error.message}`);
     res.status(500).send("Error fetching course");
   }
 });
@@ -43,9 +38,7 @@ router.put("/:id", async (req, res) => {
   try {
     await courseController.updateCourse(req, res);
   } catch (error) {
-    logger.error(
-      `Error updating course with ID ${req.params.id}: ${error.message}`,
-    );
+    logger.error(`Error updating course with ID ${req.params.id}: ${error.message}`);
     res.status(500).send("Error updating course");
   }
 });
@@ -55,9 +48,7 @@ router.delete("/:id", async (req, res) => {
   try {
     await courseController.deleteCourse(req, res);
   } catch (error) {
-    logger.error(
-      `Error deleting course with ID ${req.params.id}: ${error.message}`,
-    );
+    logger.error(`Error deleting course with ID ${req.params.id}: ${error.message}`);
     res.status(500).send("Error deleting course");
   }
 });

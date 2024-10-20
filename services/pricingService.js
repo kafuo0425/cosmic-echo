@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// services/pricingService.js
-
 const logger = require("../utils/logger");
 
 const pricingTable = {

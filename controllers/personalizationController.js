@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const personalizationService = require("../services/personalizationService");
 const { detectLanguageAndNotify } = require("../services/languageService");
 const logger = require("../utils/logger");

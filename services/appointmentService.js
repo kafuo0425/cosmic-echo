@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// services/appointmentService.js
-
 const servicesConfig = require("../config/services.json");
 
 class AppointmentService {

@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// services/webhookService.js
-
 const logger = require("../utils/logger");
 
 exports.processWebhookEvent = (eventType, eventPayload) => {

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const appointmentService = require("../services/appointmentService");
 const logger = require("../utils/logger");
 

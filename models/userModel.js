@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// models/userModel.js
-
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 const logger = require("../utils/logger").logger;

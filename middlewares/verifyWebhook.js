@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// middlewares/verifyWebhook.js
-
 const logger = require("../utils/logger");
 const xss = require("xss"); // 用于输出转义
 

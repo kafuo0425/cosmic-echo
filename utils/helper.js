@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// utils/helper.js
-
 const crypto = require("crypto");
 
 // 格式化日期：允许传入自定义的格式和本地化设置

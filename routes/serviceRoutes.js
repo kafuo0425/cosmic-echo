@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// routes/serviceRoutes.js
-
 const express = require("express");
 const { param } = require("express-validator");
 const router = express.Router();

@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// routes/facebookWebhook.js
-
 const express = require("express");
 const router = express.Router();
 const facebookController = require("../controllers/facebookController");

@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-// services/messageService.js
-
 const languageService = require("./languageService");
 const intentService = require("./intentService");
 const emotionService = require("./emotionService");

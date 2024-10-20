@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const webhookService = require("../services/webhookService");
 const logger = require("../utils/logger");
 const xss = require("xss");
