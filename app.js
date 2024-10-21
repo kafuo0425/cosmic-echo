@@ -6,13 +6,13 @@ const mongoose = require("mongoose");
 const compression = require("compression");
 const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
-const csrf = require("csrf");
+const session = require("cookie-session");  // 引入 cookie-session
+const csurf = require("csurf");  // 使用 csurf 中间件
 const rateLimit = require("express-rate-limit");
 const Sentry = require("@sentry/node");
 const loggerMiddleware = require("./utils/logger");
 const errorHandler = require("./utils/errorHandler");
 const apiRoutes = require("./routes/api");
-const csrfProtection = new csrf();
 
 // 添加环境变量检查
 const requiredEnvVars = ["MONGODB_URI", "SENTRY_DSN", "NODE_ENV", "CORS_ORIGIN"];
@@ -33,7 +33,7 @@ process.on('unhandledRejection', (err) => {
 // Sentry 初始化
 Sentry.init({ dsn: process.env.SENTRY_DSN, environment: process.env.NODE_ENV });
 
-const app = express();
+const app = express(); 
 
 app.use(Sentry.Handlers.requestHandler());
 app.use(helmet());
@@ -53,6 +53,21 @@ app.use(bodyParser.json({ limit: "1mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+// 使用 cookie-session 来存储 session
+app.use(
+  session({
+    name: 'session',
+    keys: [process.env.SESSION_SECRET || 'your-session-secret'],
+    maxAge: 24 * 60 * 60 * 1000, // 1天
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: 'Strict',
+  })
+);
+
+// 添加 CSRF 保护
+app.use(csurf({ cookie: true }));
+
 // 语言设置
 const { setLanguage, parseAcceptLanguage } = require("./services/languageService");
 app.use((req, res, next) => {
@@ -63,38 +78,14 @@ app.use((req, res, next) => {
   next();
 });
 
-// CSRF 保护中间件
+// 向前端提供 CSRF Token
 app.use((req, res, next) => {
-  const excludedRoutes = ["/api/facebook", "/api/personalization", "/api/whatsapp"];
-  
-  if (excludedRoutes.some((route) => req.path.startsWith(route))) {
-    return next();
-  }
-
-  if (["GET", "HEAD", "OPTIONS"].includes(req.method)) {
-    const secret = csrfProtection.secretSync();
-    res.cookie("csrfSecret", secret, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "Strict",
-    });
-    res.locals.csrfToken = csrfProtection.create(secret);
-    res.setHeader("X-CSRF-Token", res.locals.csrfToken);
-    return next();
-  }
-
-  const secret = req.cookies.csrfSecret;
-  const token = req.body._csrf || req.headers["x-csrf-token"];
-  
-  try {
-    if (secret && token && csrfProtection.verify(secret, token)) {
-      return next();
-    }
-    throw new Error("Invalid CSRF token");
-  } catch (err) {
-    loggerMiddleware.logger.error("CSRF verification failed", err);
-    return res.status(403).json({ message: "Invalid CSRF token" });
-  }
+  res.cookie('XSRF-TOKEN', req.csrfToken(), {
+    httpOnly: false,  // 允许在前端访问
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "Strict",
+  });
+  next();
 });
 
 // 连接 MongoDB
