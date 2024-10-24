@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x] # 兼容更多 Node.js 版本
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm" # 启用 npm 缓存加速安装
+
+      - run: npm ci # 使用 npm ci 确保依赖一致性
+
+      - run: npm run format # 确保代码格式化
+
+      - run: npm run lint # 执行 lint 检查
+
+      - run: npm audit # 进行依赖的安全性检查
+
+      - run: npm test -- --coverage # 运行测试并生成覆盖率报告
+
+      - name: Upload coverage report # 上传测试覆盖率报告
+        if: success()
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage/ # 确保你的测试产生覆盖率报告
+
+      - name: Check coverage threshold # 确保代码覆盖率符合标准
+        if: success()
+        run: |
+          if [ $(cat coverage/lcov-report/index.html | grep -Po '(?<=<span class="strong">)[^%]+') -lt 80 ]; then
+            echo "Coverage is below 80%" && exit 1;
+          fi

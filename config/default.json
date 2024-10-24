@@ -1,0 +1,47 @@
+{
+  "port": "${PORT:-9587}",
+  "webhookPort": "${WEBHOOK_PORT:-9588}",
+  "db": {
+    "uri": "${MONGODB_URI:-mongodb://localhost:27017/cosmic-echo}"
+  },
+  "logger": {
+    "level": "${LOG_LEVEL:-info}",
+    "file": "${LOG_FILE_PATH:-logs/app.log}"
+  },
+  "jwt": {
+    "secret": "${JWT_SECRET:-default_jwt_secret}",
+    "expiresIn": "${JWT_EXPIRES_IN:-7d}"
+  },
+  "facebook": {
+    "appId": "${FACEBOOK_APP_ID:-default_facebook_app_id}",
+    "appSecret": "${FACEBOOK_APP_SECRET:-default_facebook_app_secret}",
+    "pageAccessToken": "${FACEBOOK_PAGE_ACCESS_TOKEN:-default_facebook_token}",
+    "verifyToken": "${FACEBOOK_VERIFY_TOKEN:-default_verify_token}"
+  },
+  "whatsapp": {
+    "token": "${WHATSAPP_API_KEY:-default_whatsapp_token}",
+    "phoneNumberId": "${WHATSAPP_PHONE_NUMBER_ID:-default_phone_number_id}",
+    "accountId": "${WHATSAPP_ACCOUNT_ID:-default_account_id}",
+    "certificate": "${WHATSAPP_CERTIFICATE:-default_whatsapp_certificate}"
+  },
+  "course": {
+    "defaultDuration": 60,
+    "defaultLanguage": "zh",
+    "maxAttendees": 20,
+    "location": "online",
+    "notificationTime": 24
+  },
+  "services": {
+    "defaultCategory": "emotion_behavior",
+    "maxConcurrentRequests": 5
+  },
+  "session": {
+    "secret": "${SESSION_SECRET:-default_session_secret}"
+  },
+  "cors": {
+    "origin": "${CORS_ORIGIN:-http://localhost:3000}"
+  },
+  "release": {
+    "version": "${RELEASE_VERSION:-1.0.0}"
+  }
+}
