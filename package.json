@@ -10,7 +10,7 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write . && npm run lint:fix",
     "start": "node app.js",
-    "dev:start": "cross-env NODE_ENV=development DEBUG=cosmic-echo:* nodemon --watch . app.js",
+    "dev:start": "nodemon --watch . app.js",
     "dev": "npm run dev:start",
     "test": "jest --ci --coverage",
     "test:watch": "jest --watch",
@@ -54,6 +54,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.25.9",
+    "cross-env": "^7.0.3",
     "eslint": "^9.13.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.31.0",
